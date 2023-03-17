@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>jQuery</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		.blue {color: blue; }
+		.red { color: red; }
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script>
+		//einzeiliger Kommentar
+		/*
+		mehrzeiliger Kommentar
+		*/
+		
+		$(document).ready(function(){
+			// a-tags mit href=# bekommen neue/veränderte Attribute
+			$('a[href="#"]').attr({title:'jQuery macht Freude ...', href:'http://google.de', target: '_blank'});
+			
+			//a bekommen neuen Linktext
+			//--.html -> enthaltene Tags werden interpretiert // .text -> wie Zeichenfolge
+			$('a').text('<strong>Goooogle</strong>');
+			$('a').html('<strong>Goooogle</strong>');
+			
+			// Variable erstellen -> var Bezeichner [= Wertzuweisung]
+			// Bezeichner: fangen immer mit einem Buchstaben an / bestehen aus Zahlen und Buchstaben / Casesensitive... /Sonderzeichen: nur _ - 
+			// Wert einer Variable ändern: variablenbezeichner = 'neuer Wert';
+			// Inhalt einer Variable ausgeben: .text(Variablenbezeichner) ohne Anführungszeichen
+			//--Verknüpfung von variablen Inhalten und fest vorgegebenem Text =>   +  
+			var text1 = 'Alles wird gut ...';
+				text1 = 42.0001 * 1.19;
+				text1 = $('#header').text();
+			
+			$('.abs2').text('Wert von text1: ' + text1);
+			
+			$('a').css({textDecoration:'none', color:'#900'});
+			$('h1').addClass('red'); 		//Klasse zuweisen
+			$('h1').removeClass('blue');	//Klasse entziehen
+		});
+	</script>
+</head>
+<body>
+	<h1 id="header" class="blue">jQuery ...</h1>
+	<a href="#" title="Mein Link">Home</a>
+	<p class="abs1">Text in Abs. 1</p>
+
+	<p class="abs2">Hans</p>
+
+<!--
+https://chat.openai.com/chat
+
+- Browserübergreifend
+- kurze Schreibweise
+- Zugriff auf Seitenelemente statt umständlich js nahezu wie css
+- einfach Elemente zu ändern ... Farbe Position etc.
+- einfache Event-Handling ... Click
+- Animationseffekte mit einer Zeile
+- über Ajax schnell Brücke zum Server
+- Vielzahl fertiger Lösungen (Bildergalerien, Slider, ...)
+
+<script src="pfad-zur-jquery/jquery.js"></script>
+// jQuery lokal bereitstellen.
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+
+Normalerweise wird es vom Google-Server schneller geladen, da es eine Beschränkung der gleichzeitig zu ladenden Dateien von einem Webserver gibt. Daher ist es gut, wenn diese Datei von einem anderen Webserver kommt.
+Achtung Datenschutz!
+
+<script src="http://... /1.10.2/..."></script> 1. => inkl. ie6
+<script src="http://... /2.xx.x/..."></script> 2. => nur aktuelle Browser ab ie9
+<script src="http://... /3.xx.x/..."></script> 3. => Weiterentwicklung Verschlankung, html5-orientiert ...
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+-->
+
+</body>
+</html>
