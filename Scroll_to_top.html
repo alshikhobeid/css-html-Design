@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>Scroll-To-Top</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		* { margin: 0; }
+		html { scroll-behavior: smooth; } /*css-alternative*/
+		article {
+			min-height: 300vh;
+			background: linear-gradient(red,yellow);
+		}
+		#back-top {
+			position: fixed;
+			bottom: 1rem;
+			right: 1rem;
+			display: none;
+		}
+		#back-top a {
+			text-decoration: none;
+			color: #fff;
+			background: rgba(0,0,0,0.5);
+			border-radius: 50%;
+/*			padding: 1rem 0.8rem;*/
+			line-height: 48px;
+			width: 48px;
+			text-align: center;
+			display: block;
+		}
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script>
+/*
+///////////////////////////////////////
+Einseitige Bedingung -> wenn Bedingung wahr ist werden Anweisungen in {} ausgeführt.
+if (Bedingung) {		//wenn
+	Anweisung1;			//dann
+	...
+	Anweisung n;
+}
+
+///////////////////////////////////////
+if (Bedingung1) {		//wenn
+	Anweisung1;			//dann
+	Anweisung n;
+}
+else {					//sonst
+	Anweisung;
+}
+
+///////////////////////////////////////
+Vergleichende Operatoren:
+	 == gleich im Wert
+	 ===gleich im Wert und im Datentyp (5 === '5')
+	 !=	ungleich im Wert
+	 !== ungleich in Datentyp oder Wert
+	 <	kleiner
+	 >	größer
+	 <=	kleiner-gleich
+	 >=	größer-gleich
+
+/////////////////////////////////////////
+	
+*/	
+		$(document).ready(function(){
+			//button ein-/ausblenden
+			$(window).scroll(function(){
+				if($(window).scrollTop() > 200){
+					$('#back-top').fadeIn(1000); //slow,fast,Zahl [ms]
+				}
+				else {
+					$('#back-top').fadeOut(1000);
+				}
+			});
+			
+//			//langsam nach oben scrollen
+//			$('#back-top a').click(function(){
+//				$('html,body').animate({scrollTop:0},1000);
+//				return false;
+//			});
+		});
+	</script>
+</head>
+<body>
+	<article>
+		<h1>Scroll-To-Top</h1>
+	</article>
+	<div id="back-top">
+		<a href="#">Top</a>
+	</div>
+</body>
+</html>
