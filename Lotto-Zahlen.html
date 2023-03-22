@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>Name</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* typselektoren --------------------------*/
+		img {
+			max-width: 100%;
+			height: auto;
+
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1, h2, h3 {
+			font-family: Roboto700, sans-serif;
+		}
+		/* Inhalt von oben ------------------------*/
+
+		body {
+			padding: 1rem
+		}
+		h1{
+			padding: 2rem 0 1rem;
+		}
+		/* freie Klassen --------------------------*/
+	</style>
+</head>
+<body>
+<script>
+var anzZiehungen = 1;
+
+var anzZiehungen = prompt('Wieviel Ziehungen', '1');
+
+document.write('<h1>Lotto-Zahlen '+anzZiehungen+' Felder</h1>')	
+for(x=0; x<anzZiehungen;x++){
+	var sex=0; //Zähler für die 6 zufölligen Zahlen
+	var zahlen=new Array(); //Array zur Speicherung der 6 Zufallszahlen
+	var test; //Testvariable zur Prüfung ob Zahl bereits vorhanden
+	while (sex<6){ //Schleife: solange wiederholen wie Zähler < 6
+		var zzahl=Math.ceil(Math.random() * 49);	//zufallszahl zw. 1 und 49
+		test=1; //testvariable zurücksetzen
+		for(i=0;i<zahlen.length;i++){ //prüfen, ob aktuelle Zufallszahl bereits im Array gespeichert ist
+			if  (zzahl==zahlen[i]) test=0; //sollte ein bereits gespeicherter WErt mit dem aktuellen Zufallswert übereinstimmen Testvariable auf false (0) setzen
+		}
+		if (test==1) { //wenn es die aktuelle ZufallsZahl noch nicht gibt
+			zahlen[sex]=zzahl; //aktuelle zzahl in array zahlen speichern
+			sex++; //Zähler um eins erhöhen
+		}
+	}
+	zahlen.sort(function(a, b){return a-b});
+	//document.write('Die Lottozahlen für Stefan L aus F: '); //Ausgabe der Ziehung
+	for (z=0;z<zahlen.length;z++) document.write('<img src="img-lotto/'+zahlen[z]+'.gif">');
+	document.write('<br>');
+}
+</script>
+	
+</body>
+</html>
