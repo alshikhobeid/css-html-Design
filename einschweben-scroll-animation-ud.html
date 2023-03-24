@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Einschweben von Elementen</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">	
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	html {
+		font: 1rem Verdana,sans-serif;
+	}
+	article {
+		min-height: 100vh;
+		background: #000;
+		color:#fff;
+		padding: 10vw;
+	}
+	article:nth-of-type(even) {
+		background: darkorange;
+		color:#000;
+	}
+
+	
+/*
+    https://www.youtube.com/watch?v=LE4NLN7HT-g
+    https://codepen.io/Unleashed-Design/pen/WJqLwE   
+    (etwas geändert)
+*/
+
+
+   	/* action-Bereich für 'Wusch sssst'*/
+    /* nur einblenden ---------------------------*/
+    .fadescroll {
+        transition: all 800ms;
+        opacity: 0;
+    }
+    /* einblenden von links ----------------------*/
+    .moveleft {
+        transform: translateX(-10vw);
+        opacity: 0;
+        transition: all 400ms;
+    }
+    /* einblenden von rechts ----------------------*/
+    .moveright {
+        transform: translateX(10vw);
+        opacity: 0;
+        transition: all 400ms;
+    }
+    .go {
+        transform: translateX(0);
+        opacity: 1;
+    }
+</style>
+<script src="js/jquery-3.5.1.js"></script>	
+<script>
+        $(document).ready(function(){
+            // Wusch ssst-Geschichte /////////////////////////////////////////
+            //Aufruf der Funktionen, damit auch ohne scroll was angezeigt wird 
+            WhatAnimation("fadescroll"); 
+            WhatAnimation("moveleft");
+            WhatAnimation("moveright");
+
+            // Funktionsaufruf bei scrollerei 
+            $(window).scroll(function() {
+                WhatAnimation("fadescroll");
+                WhatAnimation("moveleft");
+                WhatAnimation("moveright");
+            });
+
+            // durchläuft Inhalt in Schleife um fadescroll/moveleft zu finden und function AddClass aufzurufen
+            function WhatAnimation(name) {
+                $("." + name).each(function() {
+                    AddClass(this, "go");
+                });
+            }
+
+            // Klassen zuweisen / entziehen -------------
+            function AddClass(object, name) {
+                if (IsVisible(object)) { //wenn das fadescroll/moveleft sichtbar ist ....
+                    $(object).addClass(name);
+                } 
+//else-zweig weg, wenn nur beim ersten mal ausführen!!!!!!!!!!                
+			/*	else {     
+                    $(object).removeClass(name);
+                }  */
+            }
+            
+            // wann ist fadescroll/moveleft sichtbar => return für function AddClass
+            function IsVisible(object) {
+                var viewport = $(window).scrollTop() + $(window).height(); //akt.scrollpos + fensterhöhe
+                var rand = $(object).offset(); //Position top/left von fadescroll/moveleft
+                rand.bottom = rand.top + $(object).outerHeight();
+                         console.log ($(window).scrollTop() + ' / ' + viewport   + ' / ' +   rand.top);
+               return !(
+                    viewport < rand.top + 100 || $(window).scrollTop() > rand.bottom - 100
+                ); //wenn (akt.scrollpos < fadescroll/moveleft-pos.top) oder (akt.scrollpos > fadescroll/moveleft-pos.bottom) => false
+                //also: wenn außerhalb des Fensters
+
+            }
+            
+        });
+
+    </script>
+</head>
+<body>
+	<main>
+		<article id="eins" class="fadescroll">
+			<h1>Kulturarena</h1>
+			<h2>Überschrift</h2>
+			<p><img src="img/h12.jpg" alt="Hund"></p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ratione modi deserunt, enim nisi molestias repellendus, laborum ipsam minus assumenda.</p>
+		</article>
+	
+		<article id="zwei">
+			<h2 class="moveleft">Überschrift</h2>
+			<p><img class="fadescroll" src="img/b12.jpg" alt="Blume"></p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ratione modi deserunt, enim nisi molestias repellendus, laborum ipsam minus assumenda. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quasi alias molestiae vel. Ea asperiores, nihil maxime nam deleniti aut laborum aperiam sint cumque doloremque voluptatem adipisci ad quo facere? Animi consequatur deserunt odio expedita saepe tempore iure, sint veniam, molestias ipsa mollitia cupiditate voluptatibus quae illo perferendis. Fuga nemo facilis nostrum hic! Facilis laudantium laborum architecto error, recusandae sint molestiae. Facilis quos omnis officiis tempora veritatis ipsam iste hic tempore neque dignissimos totam incidunt eaque magnam debitis odit magni eveniet, suscipit sit at voluptate in, doloribus aperiam. Maxime molestias voluptas harum pariatur, beatae ullam inventore voluptatem eligendi, unde ea rerum temporibus, neque perspiciatis. Omnis molestias quisquam voluptatum repudiandae quia, nostrum labore mollitia aliquam accusantium eveniet cupiditate asperiores neque quae aspernatur doloremque est reiciendis quibusdam, quis cumque sint, incidunt, quod iure beatae! Nemo eos hic sequi facilis non perferendis ullam repudiandae alias, incidunt quam minima possimus ut quas similique provident sed voluptas perspiciatis, temporibus rerum excepturi eligendi distinctio ducimus placeat. Cum, magni sunt mollitia earum aut laboriosam consequatur ullam atque dolorem nobis quidem maxime nulla quam id totam, vero ab provident laborum sequi perferendis impedit, accusamus necessitatibus ipsa voluptatum eligendi. Excepturi quam iure repudiandae, ipsam obcaecati magni quisquam nesciunt. Sint!</p>
+		</article>
+	
+		<article id="drei">
+			<h2 class="moveright">Überschrift</h2>
+			<p><img class="moveright" src="img/p12.jpg" alt="Blume"></p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ratione modi deserunt, enim nisi molestias repellendus, laborum ipsam minus assumenda.</p>
+		</article>
+	
+	</main>
+	
+</body>
+</html>
