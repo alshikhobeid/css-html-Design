@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>grusstext</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script>
+/*
+/////////////////////////////////////////
+Mehrere Bedingungen in einer if-Abfrage verbinden
+|| - oder - insgesamt wahr wenn eine Einzelbedingung wahr ist
+&& - und - insgesamt wahr wenn alle Einzelbedingungen wahr sind
+
+
+///////////////////////////////////////
+if (Bedingung1) {		//wenn Bedingung1 true
+	Anweisung1;			//dann
+	Anweisung n;
+}
+else if (Bedingung2){	//wenn Bedingung2 true
+	Anweisung1;			//dann
+	Anweisung n;
+}
+
+...
+
+else if (Bedingungn){	//wenn Bedingung n true
+	Anweisung1;			//dann
+	Anweisung n;
+}
+else {
+	Anweisung1;			//sonst (wenn alle Bedingungen nicht true ergaben!)
+	Anweisung n;
+}
+
+
+
+*/		
+		
+		
+		$(document).ready(function(){
+			var zeit = new Date();
+				zeit = zeit.getHours();
+			
+			zeit = 20;
+			var msg;
+//			if(zeit <= 10) {
+//				msg = "Guten Morgen";
+//			}
+//			if(zeit > 10 && zeit < 18) {
+//				msg = 'Guten Tag';
+//			}
+//			if(zeit >= 18) {
+//				msg = "Guten Abend";
+//			}
+			
+			if		(zeit <= 10) { msg = "Guten Morgen"; }
+			else if (zeit <  18) { msg = "Guten Tag"; }
+			else				 { msg = "Guten Abend"; }
+			
+			$('h1 span').text(msg);
+
+		});
+	</script>
+</head>
+<body>
+	<h1><span>Moin</span> und herzlich Willkommen</h1>
+</body>
+</html>
