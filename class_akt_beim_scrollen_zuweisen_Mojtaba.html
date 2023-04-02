@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Meine erste Seite</title>
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        html {
+            font: 1rem Verdana, sans-serif;
+        }
+        
+        #main-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            z-index: 100;
+        }
+        
+        #main-nav ul {
+            list-style: none;
+        }
+        
+        #main-nav ul a {
+            background: #222;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #eee;
+            padding: 1rem;
+            transition: 0.5s;
+        }
+        
+        #main-nav ul a:hover,
+        #main-nav ul a.akt {
+            background: #666;
+        }
+        /* header ---------------------------------------------*/
+        
+        header {
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        article {
+            min-height: 100vh;
+            background: #eee;
+            overflow: hidden;
+        }
+        
+        article:nth-of-type(even) {
+            background: #333;
+            color: #ddd;
+        }
+        
+        article>div {
+            margin: auto;
+            max-width: 800px;
+            padding: 5%;
+            position: relative;
+        }
+        /* freie Klassen --------------------------------- */
+        
+        .fltright {
+            float: right;
+            margin: 3px 0 10px 15px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="#eins">I</a></li>
+            <li><a href="#zwei">II</a></li>
+            <li><a href="#drei">III</a></li>
+            <li><a href="#vier">IV</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div>
+            <h1>
+                Hallo Welt - ...<br /> (Header, der noch keinen Menüpunkt darstellt)
+            </h1>
+            <p>Slogan</p>
+            <p>Slogan</p>
+        </div>
+    </header>
+    <main>
+        <article id="eins">
+            <div>
+                <h2>Inhalt 1</h2>
+                <p>
+                    Die Schritte wurden lauter und lauter, er sah eine dunkle Gestalt um die Ecke biegen. Fieberhaft irrten seine Augen durch die nächtliche Dunkelheit und suchten einen Ausweg.
+                </p>
+            </div>
+        </article>
+        <article id="zwei">
+            <div class="clearfix">
+                <h2>Inhalt 2</h2>
+                <p>
+                    <img class="fltright" src="../../img/h7.jpg" width="320" alt="" />Gehetzt sah er sich um. Plötzlich erblickte er den schmalen Durchgang. Blitzartig drehte er sich nach rechts und verschwand zwischen den beiden Gebäuden. Beinahe wäre
+                    er dabei über den umgestürzten Mülleimer gefallen, der mitten im Weg lag.
+                </p>
+            </div>
+        </article>
+        <article id="drei">
+            <div>
+                <h2>Inhalt 3</h2>
+            </div>
+        </article>
+        <article id="vier">
+            <div>
+                <h2>Inhalt 4</h2>
+            </div>
+        </article>
+    </main>
+    <footer id="ende"></footer>
+    <!-- Laden der jQuery -->
+    <script src="js/jquery-3.5.1.js"></script>
+
+    <script>
+		// Fixierte Navi? /////////////////////////////////////////////////////////////////
+		// Höhe der oben fixierten Navi eintragen (nicht fixed = 0)// 
+        let navHeight = 0; 
+		///////////////////////////////////////////////////////////////////////////////////
+		
+        /* ************************************************************************************************ 
+         ************************************************************************************************ 
+         ***die article-ids übernehmen ***************************************
+         ************************************************************************************************ 
+         ************************************************************************************************ */
+        // alle zielarticle nehmen
+        let articles = $("article");
+        // linkziele (article ids)
+        let articleIds = [];
+        for (let index = 0; index < articles.length; index++) {
+            const element = articles[index];
+            articleIds[index] = element.id;
+        }
+
+        console.log(articleIds)
+
+        /* ************************************************************************************************ 
+         ************************************************************************************************ 
+         ***zu aktulem link sliden ***************************************
+         ************************************************************************************************ 
+         ************************************************************************************************ */
+        $("ul a").click(function() {
+            let artId = $(this).attr("href");
+            $("html, body").animate({
+                    scrollTop: $(artId).offset().top - navHeight,
+                    // scrollTop: $(artId).offset().top - navHeight,
+                },
+                1000
+            );
+        });
+        /* ************************************************************************************************ 
+         ************************************************************************************************ 
+         ***Identifizierung der aktiven Seite mit anderen Farbe ***************************************
+         ************************************************************************************************ 
+         ************************************************************************************************ */
+        // 
+        $(window).scroll(function() {
+            let aktPosY = window.scrollY;
+            /* ************************************************************************************************ 
+             ************************************************************************************************ 
+             ***um die Artikel zu durchlaufen und den aktuellen Artikel ***************************************
+             ***zu finden, um die akt-Klasse hinzuzufügen und sie aus den anderen Artikeln zu entfernen.
+             ************************************************************************************************ 
+             ************************************************************************************************ */
+            for (let index = 0; index < articleIds.length; index++) {
+                const element = document.getElementById(articleIds[index]);
+                let articleAnfPosY = element.offsetTop
+                let articleHeight = element.offsetHeight
+
+                klasseHinzufuegen(aktPosY, articleAnfPosY, articleHeight, 'akt', articleIds[index])
+
+
+            }
+        });
+
+        // das 'akt' klasse hinzufügen(function)
+        function klasseHinzufuegen(aktullePos, posY, height, klasse, articlId) {
+            if (aktullePos >= posY && aktullePos < posY + height) {
+                $(`a[href="#${articlId}"]`).addClass(klasse);
+            } else {
+                $(`a[href="#${articlId}"]`).removeClass(klasse);
+            }
+        }
+    </script>
+</body>
+
+</html>
