@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<title>Border und Abstände</title>
+	<meta charset="utf-8">
+	<style>
+		/*
+		::Attribute mit 1-2-3-4 Werten:::::::::::::::::::::::::::::::::
+		border-width:10px; => alle 4 Seiten gleich
+		border-width:10px 20px; => oben/unten rechts/links
+		border-width:10px 20px 30px; => oben rechts/links unten
+		border-width:5px 6px 7px 8px; => oben rechts unten links
+
+		- border-width (Rahmenstärke px)
+		- border-style (stil durchgezogen, Punkte, Striche ...)
+		- border-color (Farbe)
+		- border-radius (Ecken abrunden, css3 -> nicht im Kurzbefehl!)
+		- Kurzschreibweise 
+		border:width style [color];
+		border-bottom: width style [color];
+
+		box-shadow
+		[inset/outset] x-Versatz y-Versatz [Unschärfe-Radius] [Überfüllung] [Farbe] 
+
+		padding - innerer Abstand - Inhalt zum Rahmen
+		margin - äußerer Abstand - Abstand zum benachbarten Seiten-Element
+		mit 1-2-3-4 Werten zu bedienen
+		oder padding-left / padding-right ....
+
+		Die Werte für margin von Elementen, die nicht positioniert sind, addieren sich bei vertikalen Abständen nicht, sondern nur der größere Wert des oberen oder unteren Elements wird benutzt – diesen Effekt nennt man collapsing margins. 
+		Ausnahmen:
+		- Bei Elementen mit CSS float,
+		- absolut positionierte Elemente,
+		- bei inline-block,
+		- Elemente mit overflow: scroll und overflow: clip
+		- Elemente mit CSS clear
+
+		https://www.mediaevent.de/css/margin.html
+		*/
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		/*
+		h1, p{
+			margin: 0;
+		}
+		*/
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+		}
+		h1{
+			padding-bottom: 1rem;
+		}
+		.rahmen{
+			border-width: 15px;
+			border-style: solid;
+			border-color: orange;
+			border-bottom-color: pink;
+			
+			border-width: 15px 30px;
+			
+			border-color: red green orange;
+			
+			border-radius:30px 60px;
+			
+			box-shadow:inset 3px 3px 20px;
+			
+			padding: 50px;
+			
+			margin: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="rahmen">
+		<h1>Border und Abstände</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugiat quaerat libero in? Nisi pariatur suscipit iusto quidem magni ea repellat temporibus dicta culpa quia cupiditate sequi nesciunt accusantium aperiam consequuntur doloremque id, perferendis consequatur. Deserunt cumque neque labore, ab modi suscipit nulla reiciendis ad, reprehenderit accusamus temporibus minus soluta!</p>
+	</div><div class="rahmen">
+		<h1>Border und Abstände</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugiat quaerat libero in? Nisi pariatur suscipit iusto quidem magni ea repellat temporibus dicta culpa quia cupiditate sequi nesciunt accusantium aperiam consequuntur doloremque id, perferendis consequatur. Deserunt cumque neque labore, ab modi suscipit nulla reiciendis ad, reprehenderit accusamus temporibus minus soluta!</p>
+	</div>
+</body>
+</html>
