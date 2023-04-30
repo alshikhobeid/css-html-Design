@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<title>merke - ::before</title>
+	<meta charset="utf-8">
+	<style>
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		.merke::before{
+			content: "Merke:";
+			color: red;
+			font-weight: bold;
+			display: block;
+			font-size: 1.5rem;
+		}
+		.merke::after{
+			content: "";
+			width: 100%;
+			height: 3px;
+			background: red;
+			display: block;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>merke - ::before</h1>
+	<p class="merke">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta alias, minima deserunt blanditiis voluptas corporis voluptatem doloremque, hic animi magnam illum impedit facilis tempore eos deleniti libero perferendis ipsam accusantium quibusdam aspernatur magni eum. Atque maiores hic quas reprehenderit molestiae possimus nemo voluptates nihil debitis corporis consequatur at ad, dignissimos.</p>
+</body>
+</html>
