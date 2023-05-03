@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<title>Selektoren</title>
+	<meta charset="utf-8">
+	<style>
+	/* wichtige Selektoren 
+	# type-Selektor ##############################################################
+	Eigenschaften eines html-Tags werden beschrieben
+	tag {
+	Attribut:Attributwert;
+	} 
+	*/
+
+	body {
+	font-family:Verdana,Arial,sans-serif;
+	}
+	h1, h2, h3 { /* Aufzählung von Selektoren */
+	color: skyblue;
+	}
+
+	/*
+	### ID-Selector #############################################################
+	dem Klassenselektor vergleichbar
+	Anwendung einmal pro Seite
+	*/
+		#all{
+			margin: auto;
+			max-width: 900px;
+		}
+		#topheader{
+			background: #4196B0;
+			height: 100px;
+		}
+		/*
+		### Klassen-Selektor ##################################
+		freier Klassenselektor - kann jedem Tag übergeben werden an einen Tag gebundener Klassenselektor - ...
+		Einem Tag können mehrere Klassen zugewiesen werden (<p class="besonders zentriert">)
+		*/
+		.besonders{
+			font-size: 24px;
+		}
+		p.besonders{
+			background: orange;
+		}
+		.zentriert{
+			text-align: center;
+		}
+		
+		/*
+		### Nachfahre-Selektor / kombinierter Selektor #############################################################
+		*/
+		#topnav a{
+			text-decoration: none;
+			color: orange;
+		}
+		footer a{
+			color: black;	
+		}
+		main a{
+			color: red;
+		}
+		#topnav a, footer a{
+			background: #E6FFD1;
+		}
+		/*
+		Wertigkeit von Selektoren 
+		http://blog.gordon-adams.com/html-css/wertigkeit-spezifitaet-von-css-selektoren-klassen-und-ids.html
+		*/
+	</style>
+</head>
+<body>
+	<div id="all">
+		<header id="topheader">
+			<h1 class="besonders">Selektoren</h1>
+		</header>
+		<nav id="topnav">
+			<p><a href="index.html">Home</a><a href="#">Laden</a><a href="#">Mitarbeiter</a></p>
+		</nav>
+		<main>
+			<article>
+				<p>Lorem ipsum dolor sit amet, <a href="#">consectetur </a> adipisicing elit. Deserunt cum illum, omnis. Eaque consequatur velit mollitia ex in cumque saepe!</p><p class="besonders zentriert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt cum illum, omnis. Eaque consequatur velit mollitia ex in cumque saepe!</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt cum illum, omnis. Eaque consequatur velit mollitia ex in cumque saepe!</p>
+			</article>
+		</main>
+		<footer>
+			<p><a href="#">Datenschutzt</a> <a href="#">Impressum</a></p>
+		</footer>
+	</div>
+</body>
+</html>
