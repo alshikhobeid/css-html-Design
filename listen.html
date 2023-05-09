@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<title>Listen</title>
+	<meta charset="utf-8">
+	<style>
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		article ul{
+			padding-left: 50px;
+			list-style-type: circle;
+			list-style-image: url("img/fav-puppe.png");
+			list-style-position: inside;
+			
+			/*list-style: none;*/
+		}
+		
+		/* Liste mit ::before */
+		ul.before{
+			list-style: none;
+		}
+		ul.before li::before{
+			content:"\00bb";
+			padding-right: 5px;
+			color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<article>
+	<h1>Listen</h1>
+	<ul>
+		<li>Mehl</li>
+		<li>Butter</li>
+		<li>Zucker</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae natus, consequuntur nemo, aliquid eum veritatis assumenda tempore neque illum nam in quasi corrupti adipisci quod, voluptates quis maxime fugiat incidunt quibusdam dolores. Ipsum, pariatur blanditiis illum voluptates dolorum consequuntur voluptatibus quos, eveniet alias non odit debitis iste fuga voluptate eius officiis eum, a cum harum quaerat totam. Voluptates voluptatibus veniam quis modi voluptatum quasi dolore odio ipsum numquam et earum eligendi aut reiciendis quae necessitatibus hic adipisci, aliquam, obcaecati dicta doloremque, veritatis minus totam harum. Recusandae iste porro ullam magnam numquam sint tempora placeat laudantium aliquam, vero, omnis repudiandae amet!</li>
+	</ul>
+		
+	<h2>Liste mit ::before</h2>
+		<ul class="before">
+		<li>Mehl</li>
+		<li>Butter</li>
+		<li>Zucker</li>
+		</ul>
+	</article>
+</body>
+</html>
