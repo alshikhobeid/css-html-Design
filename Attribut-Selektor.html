@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>Attribut-Selektor</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		img[width]{
+			border: 5px solid orange;
+		}
+		/* zum Attribut einen bestimmten Wert (vollständig) */
+		img[alt="Maus"]{
+			border: 10px dashed red;
+		}
+		
+		img[src*="gb46."]{
+			border: 15px groove green;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Attribut-Selektor</h1>
+	<p><img src="img/gb46.jpg" alt="Maus" width="300" title="Maus unterm Tisch"></p>
+</body>
+</html>
