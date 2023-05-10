@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<title>column-Bildergalerie</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-regular.woff') format('woff');
+		}
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		.galerie {
+			column-count: 4;
+			column-width: 280px;
+			column-gap: 0;
+		}
+		.galerie img {
+			padding: 1px;
+		}
+		
+		.wrapper1200 {
+			max-width: 1200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>column-Bildergalerie</h1>
+	<figure class="galerie wrapper1200">
+		<img src="img/gb01.jpg" alt="London">
+		<img src="img/gb04.jpg" alt="London">
+		<img src="img/gb06.jpg" alt="London">
+		<img src="img/gb12.jpg" alt="London">
+		<img src="img/gb14.jpg" alt="London">
+		<img src="img/gb16.jpg" alt="London">
+		<img src="img/gb35.jpg" alt="London">
+		<img src="img/gb45.jpg" alt="London">
+		<img src="img/gb46.jpg" alt="London">
+		<img src="img/gb49.jpg" alt="London">
+		<img src="img/gb51.jpg" alt="London">
+		<img src="img/gb32.jpg" alt="London">
+	</figure>
+</body>
+</html>
