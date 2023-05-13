@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<!-- W3C Validierung: 
+	HTML: http://validator.w3.org
+	CSS: https://jigsaw.w3.org/css-validator/
+	-->
+	<title>Animation</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Testumgebung immer Edge statt IE7 -->
+	<style>
+		* { /* Universalselektor */
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html,body {
+			font-family: Verdana,Arial, sans-serif;
+			font-size: 1rem;
+            overflow: hidden;
+		}
+		img{ /* responsiv: Bilder dürfen sich verkleinern*/
+			max-width:100%;
+			height: auto;
+		}
+        /* 2 Animationen für Balken wechseln sich ab*/
+        #bar {
+            position:absolute;
+            bottom: 0px;
+            left: 1400px;
+            height: 0px;
+            width:100px;
+            background: black;
+            
+            animation-name:bar_up,bar_appear;
+            animation-duration: 8s,8s;
+            animation-delay: 0s, 8s;
+            animation-iteration-count:1, 1;
+            animation-direction:normal,normal;
+            animation-timing-function: ease-in, ease-in; 
+        }
+        
+        @keyframes bar_up{
+            0% {height:0px; background: blue;}
+            40% {height:0px;}
+            48% { height:700px;}
+            52% { height:700px;}
+            60% {height:0px;}
+            100% { height:0px; background: blue;}
+        }
+        @keyframes bar_appear{
+            0% {opacity:0; height:700px;background: red;}
+            40% {opacity:0;}
+            48% {opacity:1;}
+            52% {opacity:1;}
+            60% {opacity:0;}
+            100% {opacity:0; height:700px; background: red;}
+        }
+        
+        /* Horizontale Bewegung*/
+        #horizontal{
+            position:absolute;
+            bottom:0px;
+            left:-500px;
+            width:100px;
+            height:1000px;
+            /*animation: hori_back 8s linear 0s infinite normal;*/
+            animation-name: hori_loose,hori_win,hori_back;
+            animation-duration: 8s,8s,16s;
+            animation-timing-function: linear,linear,ease-out;
+            animation-delay:0s,16s,24s;
+            animation-iteration-count: 2,1,1;
+            animation-fill-mode:none,none,forwards;
+                
+                /*,hori 8s,8s linear 0s,16s 2,1 normal;*/
+        }
+        
+        @keyframes hori_loose{
+            50% {left:1300px; height:900px;}
+            100%{height:200px;}
+        }
+        @keyframes hori_win{
+            100%{left:2600px; height:200px;}
+        }
+        @keyframes hori_back{
+            0% {left:2600px; height:0px;}
+            100%{left:0px; height:0px;}
+        }
+        
+        #ball {
+            position:absolute;
+            bottom:1500px;
+            left:0px;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            animation-name:ball_fall, ball_bounce;
+            animation-duration: 1.5s, 1s;
+            animation-delay:0s,1.5s;
+            animation-fill-mode: both; /* Endzustand*/
+            animation-iteration-count:1,infinite; /*Anzahl Durchläufe */
+            animation-direction: normal,alternate;/*normal(von 0% - 100%; standard); reverse (von 100% - 0%);alternate (0%-100%-0%);alternate-reverse(100%-0%-100%)*/
+            animation-timing-function: ease-in, ease-out;
+        }
+        
+        @keyframes ball_fall{
+            from {bottom: 1500px;}
+            to {bottom: 0px;}
+        }       
+        @keyframes ball_bounce{
+            0% {}
+            98% {bottom: 100%;}
+            100% {bottom: 100%;}
+        }
+        
+        #ball img {
+            animation: ball_rotate 40s ease-out 0s 1 normal;
+        }
+        @keyframes ball_rotate{
+            0% {}
+            60% {transform: rotate(5760deg);}
+        }        
+
+
+	</style>
+</head>
+<body>
+    <div id="bar"></div>
+    <div id="horizontal">
+        
+        <div id="ball"><img src="img/wasserball.png" alt="Wasserball"></div>
+    </div>
+</body>
+</html>
