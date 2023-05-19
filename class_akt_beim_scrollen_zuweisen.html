@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Meine erste Seite</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">	
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	html {
+		font: 1rem Verdana,sans-serif;
+	}
+
+ 		#main-nav {
+			position: fixed;
+			top:50%;
+			transform: translateY(-50%);
+			right: 0;
+			z-index: 100;
+		}
+		#main-nav ul{
+			list-style: none;
+		}
+		#main-nav ul a {
+			background: #222;
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			color: #eee;
+            padding:1rem;
+            transition: 0.5s;
+		}
+		#main-nav ul a:hover,
+		#main-nav ul a.akt {
+			background: #666;
+		}
+        /* header ---------------------------------------------*/
+		header {
+			height: 100vh;
+            text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+        
+        article {
+            min-height: 100vh;
+            background: #eee;
+            overflow: hidden;
+        }
+        article:nth-of-type(even){
+            background: #333;
+            color:#ddd
+        }
+        article > div {
+            margin: auto;
+            max-width: 800px;
+            padding: 5%;
+            position: relative;
+        }
+        
+        
+        /* freie Klassen --------------------------------- */
+        .fltright {
+            float:right;
+            margin: 3px 0 10px 15px;
+        }
+		.clearfix::after {
+			content: "";
+			display: block;
+			clear:both;
+		}
+</style>
+<script src="js/jquery-3.5.1.js"></script>	
+<script>
+$(document).ready(function(){
+	/////////////////////////////////////////////////////
+	// aktuellen Link automatisch .akt zuweisen /////////
+	/////////////////////////////////////////////////////
+	// alle id in Reihenfolge in das Array! -----------//
+	var navlink = new Array(                           //
+		'#eins',                                       //
+		'#zwei',                                       //
+		'#drei',                                       //
+		'#vier'                                        //
+	);                                                 //
+	//Höhe der oben fixierten Navi eintragen (nicht fixed = 0)// 
+	var navHeigth = 0;                                 //
+	var ersterLinkBeiNull = false; //true,false;/////////
+	//gib dem footer die id="ende" !!!!!!!!!!!!!!!!!!!!//
+	/////////////////////////////////////////////////////
+
+	//ab hier nix mehr ändern
+	//navHeigth = navHeigth +0;
+	if(ersterLinkBeiNull == true)$('a[href="'+navlink[0]+'"]').addClass('akt');
+
+	//Wenn gescrollt wird ...     
+	$(window).scroll(function(){
+
+		//aktuelle y-Position ////////////////////////////////
+		var topnow = $(window).scrollTop();
+
+		//function für die einzelnen Article starten ///////
+		var x;
+		for(x = 0 ; x < navlink.length ; x++){	//durchläuft alle article-id
+			if( x < (navlink.length-1)){		//alle article, aber nicht der letzte
+				var anf = $(navlink[x]).offset().top - navHeigth -1;
+				var end = $(navlink[(x+1)]).offset().top - navHeigth -1;
+				AktLink(navlink[x],anf,end,topnow);
+			}
+			else { 								//letzter article
+				var anf = $(navlink[x]).offset().top - navHeigth -1;
+				var end = $('#ende').offset().top;
+				AktLink(navlink[x],anf,end,topnow);
+			}
+		}
+	});  
+	//Klasse akt zuweisen (function) -> per css .akt formatieren ///
+	function AktLink(link,idStart,idEnd,pos){
+		if(pos >= idStart && pos < idEnd){
+			$('nav ul a[href="'+link+'"]').addClass('akt');
+		}
+		else {
+			$('nav ul a[href="'+link+'"]').removeClass('akt');
+		}
+	}  
+
+	/////////////////////////////////////////////////////
+	// Zum aktuellen Link sliden  ///////////////////////
+	/////////////////////////////////////////////////////
+	$('nav ul a').click(function(){
+		var link = $(this).attr('href'); 
+		$('html,body').animate({scrollTop:($(link).offset().top - navHeigth)},1000);
+		return false;
+	});
+
+});   
+    
+    
+</script>
+	
+	
+</head>
+<body>
+<nav id="main-nav">
+	<ul>
+		<li><a href="#eins">I</a></li>
+		<li><a href="#zwei">II</a></li>
+		<li><a href="#drei">III</a></li>
+		<li><a href="#vier">IV</a></li>
+	</ul>	
+</nav>
+<header>
+	<div>
+        <h1>Hallo Welt - ...<br> (Header, der noch keinen Menüpunkt darstellt)</h1> 
+        <p>Slogan</p>
+        <p>Slogan</p>
+    </div>
+</header>
+<main>
+    <article id="eins">
+        <div>
+            <h2>Inhalt 1</h2>
+            <p>Die Schritte wurden lauter und lauter, er sah eine dunkle Gestalt um die Ecke biegen. Fieberhaft irrten seine Augen durch die nächtliche Dunkelheit und suchten einen Ausweg. </p>
+        </div>
+    </article>
+    <article id="zwei">
+        <div class="clearfix">
+            <h2>Inhalt 2</h2>
+            <p><img class="fltright" src="img/h7.jpg" width="320">Gehetzt sah er sich um. Plötzlich erblickte er den schmalen Durchgang. Blitzartig drehte er sich nach rechts und verschwand zwischen den beiden Gebäuden. Beinahe wäre er dabei über den umgestürzten Mülleimer gefallen, der mitten im Weg lag. </p>
+        </div>
+    </article>
+    <article id="drei">
+		<div><h2>Inhalt 3</h2></div>
+	</article>
+    <article id="vier">
+		<div><h2>Inhalt 4</h2></div>
+	</article>
+</main>
+<footer id="ende"></footer>
+
+	
+</body>
+</html>
