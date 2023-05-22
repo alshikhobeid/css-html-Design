@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<title>Sticky-Menu</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	html {
+		font: 1rem Verdana, Arial, sans-serif;
+	}
+	#all {
+		max-width: 920px;
+		margin: auto;
+	}
+	header {
+		background: red;
+	}
+	/* nach dem Aufruf der Seite ------------------------- */
+	#topnav {
+		position: sticky;
+		top: 0;
+	}
+	#topnav ul {
+		list-style: none;
+		display: flex;
+	}
+	#topnav li {
+		flex-basis: 16.7%;
+	}
+	#topnav ul li a {
+		text-decoration: none;
+		background-color: rgba(95,93,93,1);
+		color: white;
+		text-align: center;
+		line-height: 40px;
+		display: block;
+		border-left: 1px solid;
+	}
+	#topnav ul li:last-of-type a {
+		border-right: 1px solid #0E0E0E;
+	}
+	#topnav ul li:first-of-type a {
+		border-color: #0E0E0E;
+	}
+	/* Anpassung für Sticky-Menu -----------------------*/
+
+	/* Spalterei -------------------------*/
+	#spalten {
+		background: #e8e8e8;
+		display: flex;
+	}
+	main {
+		min-height: 1000px;
+		background: #eee;
+		padding: 2%;
+		flex-basis: 70%;
+	}
+	aside {
+		flex-basis: 30%;
+		padding: 2%;
+	}
+	footer {
+		line-height: 40px;
+		color: #fff;
+		background: #333;
+		padding-left: 2%;
+	}
+	/* freie Klassen -----------------*/
+	.clearfix:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+</style>
+</head>
+<body>
+<div id="all">
+	<header> <img src="img/top1.jpg" alt="Die Band"> </header>
+	<nav id="topnav">
+		<ul>
+			<li><a href="#">Start</a></li>
+			<li><a href="#">Sie suchen</a></li>
+			<li><a href="#">Ich biete</a></li>
+			<li><a href="#">Referenzen</a></li>
+			<li><a href="#">Kontakt</a></li>
+			<li><a href="#">Englisch</a></li>
+		</ul>
+	</nav>
+	<div id="spalten">
+		<main>
+			<article>
+				<h2>Überschrift 2</h2>
+				<p>Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben. Eines Tages aber beschloß eine kleine Zeile Blindtext, ihr Name war Lorem Ipsum, hinaus zu gehen in die weite Grammatik.</p>
+			</article>
+		</main>
+		<aside>
+			<h2>Überschrift 2</h2>
+			<p>Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben. Eines Tages aber beschloß eine kleine Zeile Blindtext, ihr Name war Lorem Ipsum, hinaus zu gehen in die weite Grammatik.</p>
+		</aside>
+	</div>
+	<footer>
+		<p>Alle Rechte den Teachern</p>
+	</footer>
+</div>
+</body>
+</html>
