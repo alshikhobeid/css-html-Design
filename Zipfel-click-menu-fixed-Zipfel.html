@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+	<title>Zipfel-Click-Menu</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-regular.woff') format('woff');
+		}
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		body {
+			min-height: 3000px;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		input[id*="checker"] {
+			display: none;
+		}
+		nav {
+			position: fixed;
+			top: 48px;
+			right: -200px;
+			z-index: 100;
+			background: orange;
+			width: 200px;
+			transition: 0.3s;
+		}
+		#navchecker:checked + nav {
+			right: 0;
+		}
+		nav p {
+			position: fixed;
+			top: 0;
+			right: 0;
+			background: darkorange;
+			line-height: 48px;
+			width: 48px;
+			text-align: center;
+			font-size: 1.8rem
+		}
+		nav label {
+			display: block;
+			transition: 0.8s 0.5s;
+		}
+		#navchecker:checked + nav label {
+			transform: rotate(45deg);
+		}
+		nav ul {
+			list-style: none;
+		}
+		nav a {
+			text-decoration: none;
+			color: #000;
+			line-height: 48px;
+			border-bottom: 1px solid;
+			display: block;
+			padding-left: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<h1>Zipfel-Click-Menu</h1>
+	<input type="checkbox" id="navchecker">
+	<nav>
+		<p class="nodesk"><label for="navchecker">+</label></p>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Über uns</a></li>
+			<li><a href="#">Leistungen</a></li>
+			<li><a href="#">asdfsafd</a></li>
+			<li><a href="#">Kontakt</a></li>
+			<li><a href="#">Impressum</a></li>
+		</ul>
+	</nav>
+</body>
+</html>
