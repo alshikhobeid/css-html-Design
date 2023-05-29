@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+	<title>Animierter Burger</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		nav{
+			position: fixed;
+			top: 0;
+			
+			left: 50%;
+			transform: translateX(-50%);
+			background: orange;
+			width: 200px;
+		}
+		nav ul{
+			list-style: none;
+		}
+		nav a{
+			text-decoration: none;
+			color: #000;
+			border-bottom: 1px solid;
+			display: block;
+			line-height: 48px;
+			padding-left: 1rem;
+		}
+		nav a:hover{
+			background: #FFCB6C;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Animierter Burger</h1>
+	<input type="checkbox" id="navchecker">
+	<nav>
+		<label for="navchecker">
+			<span class="line"></span>
+			<span class="line"></span>
+			<span class="line"></span>
+		</label>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Über uns</a></li>
+			<li><a href="#">Leistungen</a></li>
+			<li><a href="#">asdfsafd</a></li>
+			<li><a href="#">Kontakt</a></li>
+			<li><a href="#">Impressum</a></li>
+		</ul>
+	</nav>
+</body>
+</html>
