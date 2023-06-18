@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Scrollbalken, Schrägen</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+        scrollbar-color: silver black; /* nur firefox */
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+html {
+	font: 1rem Verdana, sans-serif;
+}
+main {
+	display: block; /* ie11 */
+	overflow: hidden;
+}
+	
+	article {
+		min-height: 400px;
+		padding: 2rem 4rem;
+	}
+	article:nth-of-type(even){
+		background: silver;
+	}
+    .keil_o_rechts {
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 6vw 100vw;
+        border-color: transparent silver silver transparent;
+    }
+    
+    .keil_u_rechts {
+        height: 0;
+        border-style: solid;
+        border-width: 6vw 0 0 100vw;
+        border-color: silver silver transparent transparent;
+    }
+    
+    .keil_o_links {
+        height: 0;
+        border-style: solid;
+        border-width: 0 100vw 6vw 0;
+        border-color: transparent transparent silver silver;
+    }
+    
+    .keil_u_links {
+        height: 0;
+        border-style: solid;
+        border-width: 6vw 100vw 0 0;
+        border-color: silver transparent transparent silver;
+    }
+    #progressContainer {
+        position: fixed;
+        top: 0px;
+		left: 0;
+		right: 0;
+        height: 6px;
+        background: transparent;
+    }
+    
+    #progressBar {
+        height: 6px;
+        width: 0%;
+        background: linear-gradient(to right, #e89317, #931f8c);
+    }
+	
+	
+	.sborder {
+		height: 200px;
+		border:50px solid;
+		border-color:red green blue orange;
+	}
+</style>
+<script src="js/jquery-3.5.1.js"></script> 
+<script>
+ $(document).ready(function() {
+	 $(window).scroll(function() {
+        // Scrollbar
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+    });
+});
+</script>
+</head>
+<body>
+<div id="progressContainer">
+	<div id="progressBar"></div>
+</div>
+
+<main>
+	<article id="eins">
+		<h2>Article 1</h2>
+		<div class="sborder"></div>
+	</article>
+	
+	<div class="keil_o_links"></div>
+	<article id="zwei">
+		<h2>Article 2</h2>
+	</article>
+	<div class="keil_u_links"></div>
+
+	<article id="drei">
+		<h2>Article 3</h2>
+	</article>
+
+	<div class="keil_o_links"></div>
+	<article id="vier">
+		<h2>Article 4</h2>
+	</article>
+	<div class="keil_u_links"></div>
+
+	<article id="fuenf">
+		<h2>Article 5</h2>
+	</article>
+</main>
+</body>
+</html>
