@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>Array</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		.weit200 {
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Array</h1>
+	<script>
+		//eindimensionales indiziertes Array
+		var gruppe = new Array('Jenny','Siri','Thomas','Thekla','Perle','Florian',42);
+	
+		//Ausgabe des 4. Wertes => Index3 (erster Index ist 0!)
+		document.write(gruppe[3]);
+		
+		//Einzelwert überschreiben
+		gruppe[3] = 'Natalie';
+		document.write(gruppe[3]);	
+		
+		//ganzes Array ausgeben
+		for(var z = 0 ; z < gruppe.length ; z++) {
+			document.write('<p>' + gruppe[z] + '</p>');
+		}
+		
+		////////////////////////////////////////////
+		
+		var fotos = new Array(
+			'n2.jpg',
+			'k2.jpg',
+			'gb02.jpg',
+			'n12.jpg',
+			'p5.jpg'
+		);
+		for(var z = 0 ; z < fotos.length ; z++){
+			document.write('<img class="weit200" src="img/'+fotos[z]+'" alt="Galerie">');
+		}
+		
+		//zweidimensionales indiziertes Array
+		var fotogal = new Array();
+			//                      Dateiname , alt , title
+			fotogal[0] = new Array('n2.jpg','Mond','Frankreich');
+			fotogal[1] = new Array('k2.jpg','Katze','Frankreich');
+			fotogal[2] = new Array('gb02.jpg','London','England');
+			fotogal[3] = new Array('n12.jpg','Willkommen','Deutschland');
+			fotogal[4] = new Array('p5.jpg','Puppi','bestrickte Puppe');
+
+		//Variante Perle
+		var fotogal = new Array(
+			//        Dateiname , alt , title
+			new Array('n2.jpg','Mond','Frankreich'),
+			new Array('k2.jpg','Katze','Frankreich'),
+			new Array('gb02.jpg','London','England'),
+			new Array('n12.jpg','Willkommen','Deutschland'),
+			new Array('p5.jpg','Puppi','bestrickte Puppe')
+		);
+		for(var z = 0 ; z < fotogal.length ; z++) {
+			document.write('<img class="weit200" src="img/'+fotogal[z][0]+'" alt="'+fotogal[z][1]+'" title="'+fotogal[z][2]+'">');
+		}
+	</script>
+</body>
+</html>
