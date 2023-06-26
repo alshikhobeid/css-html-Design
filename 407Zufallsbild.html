@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>Zufallsbild</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+
+	</style>
+
+</head>
+<body>
+	<h1>Zufallsbild</h1>
+	<figure id="zbild"><img src="img/p1.jpg" alt="Puppi"></figure>
+
+	<script src="js/jquery-3.5.1.js"></script>
+	<script>
+		var zfotos = new Array(
+			'h5.jpg',
+			'h15.jpg',
+			'n5.jpg',
+			'k5.jpg',
+			'h12.jpg',
+			'h11.jpg'
+		);
+		//zufallszahl
+		var zzahl = Math.random();
+							console.log('Zufallszahl: ' + zzahl);		
+		
+		//aus zufallszahl zufallsindex errechnen
+		var zindex = zfotos.length * zzahl;
+			zindex = Math.floor(zindex);
+							console.log('Zufallsindex: ' + zindex);		
+		//ausgabe
+		$('#zbild').html('<img src="img/'+zfotos[zindex]+'" alt="Zufallsbild">')
+	</script>
+</body>
+</html>
