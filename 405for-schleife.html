@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>for-schleife</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+
+	</style>
+</head>
+<body>
+	<h1>for-schleife</h1>
+	<script>
+		for(var z = 0 ; z < 10 ; z++) {
+			document.write('Der Wert von z: ' + z + '<br>');
+		}
+		
+		//--User-Settings---------------------
+		var AnzImgProZeile = 5;
+		//-----------------------------------
+		
+		
+		for(var i = 1 ; i <= 49 ; i++){
+			document.write('<img src="img-lotto/'+i+'.gif" alt="Lotto">');
+			if(i % AnzImgProZeile == 0){ document.write('<br>'); }
+		}
+		
+/*
+for(Zählvariable bekommt Startwert ; Abbruchbedingung ; Zählvariable um 1 erhöhen) {
+	Anweisung(en);
+}
+
+inkrement - erhöht den Wert der Variable um 1 (x++)
+
+/////////////////////////////////////////
+Mehrere Bedingungen in einer if-Abfrage verbinden
+|| - oder - insgesamt wahr wenn eine Einzelbedingung wahr ist
+&& - und - insgesamt wahr wenn alle Einzelbedingungen wahr sind
+
+/////////////////////////////////////////
+Modulo (x % 5)
+untersucht den Nachkommaanteil einer Division.
+
+*/
+		
+	</script>
+<!--	<img src="img-lotto/1.gif" alt="Lotto">-->
+</body>
+</html>
