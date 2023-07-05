@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+	<title>klick-target-menu</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-regular.woff') format('woff');
+		}
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		article {
+			min-height: 600px;
+		}
+		article:nth-of-type(even) {
+			background: #eee;
+		}
+		
+		/* target - navi ------------------------*/
+		#main_nav {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			right: -200px;
+			width: 200px;
+			background: #DDF7FF;
+			z-index: 100;
+			transition: 0.3s;
+		}
+		#main_nav:target {
+			right: 0;
+		}
+		#main_nav p {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -48px;
+			width: 48px;
+			line-height: 48px;
+			background: #DDF7FF;
+			text-align: center;
+		}
+		#main_nav p a {
+			font-size: 1.8rem;
+			transform: scale(1.3,0.8);
+			text-decoration: none;
+			color: #000;
+			display: block;
+		}
+		#main_nav p a[href="#close"]{
+			display: none;
+			transform: scale(1);
+		}
+		#main_nav:target p a[href="#close"]{
+			display: block;
+		}
+		#main_nav ul {
+			list-style: none;
+			padding: 0.5rem;
+/*			background: red;*/
+			height: 100%;
+			overflow: auto;
+		}
+		#main_nav ul a {
+			text-decoration: none;
+			color: #000;
+			background: #91C1D0;
+			display: block;
+			padding: 0.9rem 1rem;
+			margin: 0.5rem
+		}
+	</style>
+</head>
+<body>
+	<nav id="main_nav">
+		<p><a href="#main_nav">&equiv;</a></p>
+		<p><a href="#close">&times;</a></p>
+		<ul>
+			<li><a href="#eins">eins</a></li>
+			<li><a href="#zwei">zwei</a></li>
+			<li><a href="#drei">drei</a></li>
+			<li><a href="#vier">vier</a></li>
+			<li><a href="#fuenf">fuenf</a></li>
+			<li><a href="#sechs">sechs</a></li>
+		</ul>
+	</nav>
+	<h1>klick-target-menu</h1>
+	<main>
+		<article id="eins">
+			<h2>Überschrift 1</h2>
+		</article>
+		<article id="zwei">
+			<h2>Überschrift 2</h2>
+		</article>
+		<article id="drei">
+			<h2>Überschrift 3</h2>
+		</article>
+		<article id="vier">
+			<h2>Überschrift 4</h2>
+		</article>
+		<article id="fuenf">
+			<h2>Überschrift 5</h2>
+		</article>
+		<article id="sechs">
+			<h2>Überschrift 6</h2>
+		</article>
+	</main>
+</body>
+</html>
