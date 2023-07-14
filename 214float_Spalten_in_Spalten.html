@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<title>float - Spalten in Spalten</title>
+	<meta charset="utf-8">
+	<style>
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		.clearfix::after,
+		.zweispalter::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.zweispalter > div:first-of-type {
+			float: left;
+			width: 49%;
+			background: rgba(233,255,207,1.00)
+		}
+		.zweispalter > div:last-of-type {
+			float: right;
+			width: 49%;
+			background: rgba(233,255,207,1.00)
+		}
+		/*
+		Kind-Selektor: 
+		div.elternelement > div.kindelement {}
+
+		Einschränkung des Nachfahre-Selektors auf die direkten Kinder
+		
+		https://www.mediaevent.de/css/css-selektor-kontextselektor.html
+		*/
+	</style>
+</head>
+<body>
+	<article>
+	<h1>float - Spalten in Spalten</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur excepturi temporibus dolores fugiat, soluta atque iste repellat culpa deserunt quam labore voluptatibus aspernatur explicabo, quod. Corporis officia quo quae, debitis architecto dolores quaerat provident fugiat quos molestiae error iure deleniti magni, quia alias doloremque labore perspiciatis, culpa itaque. A, dolore.</p>
+		
+		<div class="zweispalter">
+			<div>Links</div>
+			<div>Rechts</div>
+		</div>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur excepturi temporibus dolores fugiat, soluta atque iste repellat culpa deserunt quam labore voluptatibus aspernatur explicabo, quod. Corporis officia quo quae, debitis architecto dolores quaerat provident fugiat quos molestiae error iure deleniti magni, quia alias doloremque labore perspiciatis, culpa itaque. A, dolore.</p>
+	</article>
+</body>
+</html>
