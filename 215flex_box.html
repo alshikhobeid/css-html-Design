@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<title>flex-box</title>
+	<meta charset="utf-8">
+	<style>
+		/*
+		http://www.mediaevent.de/css/display-flex.html
+
+		display:flex - flex-Eigenschaft wird dem Flex-Container zugewiesen
+		flex-direction - column,row (an den Flex-Container)
+		flex-basis - Weite der Flex-Items (Items)
+		order - Zahl - Sortierung der items (Items)
+
+		justify-content - horizontale Ausrichtung der Items (flex-end,flex-start,space-between,space-arround)(an den Flex-Container notieren)
+
+		Flex-Container und Flex-Items stehen in direkter Eltern-Kind-Beziehung 
+		*/
+		
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		
+		/* spalterei ----------------------*/
+		/* flex-container */
+		#spalten{
+			display: flex;
+			background: #eee;
+			justify-content: space-between;
+			/*flex-direction: column;*/
+		}
+		/*flex-items*/
+		#leftnav{
+			flex-basis: 20%;
+			background: orange;
+			order: 5;
+		}
+		main{
+			flex-basis: 50%;
+			background: pink;	
+			min-height: 500px;
+			order: 3;
+		}
+		aside{
+			flex-basis: 20%;
+			background: rgba(238,255,195,1.00);
+			order: 1;
+		}
+	</style>
+</head>
+<body>
+	<div id="spalten">
+		<nav id="leftnav">nav</nav>
+		<main>
+			<article>
+				<h1>flex-box</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptas tenetur magni culpa dolore at assumenda veritatis officia natus atque.</p>
+			</article>
+		</main>
+		<aside>Randbemerkung</aside>
+	</div>
+</body>
+</html>
