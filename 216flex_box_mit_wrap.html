@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<title>flex-wrap-Beispiel</title>
+	<meta charset="utf-8">
+	<style>
+		/* 
+		flex-wrap: wrap; - Umbruch der Items zulassen (flex-container)
+		flex-grow - Vergrößern der Items zulassen (Werte: 1 => eingeschaltet, >1 => Gewichtung der Vergrößerung vornehmen; flex-items)
+
+		*/
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		/* spalterei ---------------------*/
+		/* flex-container */
+		#spalten{
+			display: flex;
+			background: #eee;
+			flex-wrap: wrap;
+		}
+		/* flex-items */
+		#leftnav{
+			flex-basis: 200px;
+			background: orange;
+			flex-grow: 1;
+		}
+		main{
+			flex-basis: 400px;
+			background: pink;
+			flex-grow: 5;
+		}
+		aside{
+			flex-basis: 200px;
+			background: rgba(239,255,183,1.00);
+			flex-grow: 5;
+		}
+	</style>
+</head>
+<body>
+	<div id="spalten">
+		<nav id="leftnav">nav</nav>
+		<main>
+			<article>
+				<h1>flex-wrap-Beispiel</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptas tenetur magni culpa dolore at assumenda veritatis officia natus atque.</p>
+			</article>
+		</main>
+		<aside>Randbemerkung</aside>
+	</div>
+	
+</body>
+</html>
