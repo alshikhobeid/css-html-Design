@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<title>flex - Spalten in Spalten</title>
+	<meta charset="utf-8">
+	<style>
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		/* Inhalt von oben ---------------*/
+		main{
+			max-width: 900px;
+			margin: auto;
+			background: #eee;
+			padding: 2%;
+		}
+		
+		/* freie Klassen ------------------ */
+		.zweispalter, .dreispalter, .vierspalter{
+			display: flex;
+			justify-content: space-between;
+			margin: 2% 0;
+		}
+		.zweispalter > div{
+			flex-basis: 49%;
+			background: orange;
+			
+		}
+		.dreispalter > div{
+			flex-basis: 32%;
+			background: rgba(160,206,255,1.00);
+		}
+		.vierspalter > div{
+			flex-basis: 23.5%;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<article>
+			<h1>flex - Spalten in Spalten</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi labore sequi voluptatibus minus dolorem, veritatis assumenda suscipit amet, dicta quis!</p>
+			
+			<div class="zweispalter">
+				<div>Links Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque blanditiis ullam dignissimos odit, minus culpa. Ipsam, praesentium, natus! Libero, explicabo.</div>
+				<div>Rechts Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque blanditiis ullam dignissimos odit, minus culpa. Ipsam, praesentium, natus! Libero, explicabo.</div>
+			</div>
+			
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi labore sequi voluptatibus minus dolorem, veritatis assumenda suscipit amet, dicta quis!</p>
+			
+			<div class="dreispalter">
+				<div>Links</div>
+				<div>Mitte</div>
+				<div>Rechts</div>
+			</div>
+			
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sint voluptates id dolorum ab consectetur! Fugiat suscipit, amet illo! Quae.</p>
+			
+			<div class="vierspalter">
+				<div>Links</div>
+				<div>Mitte-Links</div>
+				<div>Mitte-Rechts</div>
+				<div>Rechts</div>
+			</div>
+			
+		</article>
+	</main>
+</body>
+</html>
