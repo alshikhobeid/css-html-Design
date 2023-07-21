@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<title>flex-box-Ausrichtung</title>
+	<meta charset="utf-8">
+	<style>
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		header{
+			background: #900;
+			color: #fff;
+			height: 150px;
+			display: flex;
+			align-items: center;
+		}
+		header > div{
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			flex-wrap: wrap;
+			background: rgba(255,255,255,0.5);
+			flex-basis: 100%;	
+		}
+		article{
+			background: url("img/web2000/aa1.jpg") right center;
+			background-size: cover;
+			min-height: 600px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		article > div{
+			background: rgba(255,255,255,0.8);
+			padding: 2%;
+			border-radius: 10px;
+		}
+		.wrapper900{
+			max-width: 900px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="wrapper900">
+			<h1>flex-box-Ausrichtung</h1>
+			<nav>navi</nav>
+		</div>
+	</header>
+	<main>
+		<article>
+			<div>
+				<h2>Überschrift</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, voluptatem?</p>
+			</div>
+		</article>
+	</main>
+</body>
+</html>
