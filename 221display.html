@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>display</title>
+	<meta charset="utf-8">
+	<style>
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		#eins{
+			background: orange;
+			height: 50px;
+			width: 100px;
+			
+			display: none;
+			display: block;
+		}
+		#inline div{
+			background: pink;
+			height: 50px;
+			width: 100px;
+			
+			display: inline;
+		}
+		#inlineblock div{
+			background: yellow;
+			height: 50px;
+			width: 100px;
+			
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<h1>display</h1>
+	<div id="eins"></div>
+	
+	<div id="inline">
+		<div>Box</div>
+		<div>Box</div>
+		<div>Boxen</div>
+		<div>Box</div>
+	</div>
+	
+	<div id="inlineblock">
+		<div>Box</div>
+		<div>Box</div>
+		<div>Boxen</div>
+		<div>Box</div>
+	</div>
+</body>
+</html>
