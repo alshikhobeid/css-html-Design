@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<title>ul-nav-horizontal</title>
+	<meta charset="utf-8">
+	<style>
+		*{	/*Universalselektor*/
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html{
+			font: 1rem Verdana, sans-serif;
+		}
+		/* Inhalt von oben ---------------- */
+		#all{
+			max-width: 900px;
+			margin: auto;
+		}
+		#topheader{
+			background: orange;
+			height: 150px;
+			padding: 2%;	
+		}
+		/* navi-------- */
+		#topnav{
+			background: #000;
+		}
+		#topnav ul{
+			list-style: none;
+			display: flex;
+		}
+		#topnav li{
+		/*	flex-basis: 131px; */ /* feste Breit */
+			flex-basis: 16.666%;
+			text-align: center;
+		}
+		#topnav a{
+			text-decoration: none;
+			color: orange;
+			padding: 0.5rem 1rem;
+			display: block;
+			border-right: 1px solid orange;
+		}
+		#topnav a:hover{
+			background: orange;
+			color: #000;
+		}
+		#topnav li:last-of-type a{
+			border: none;
+		}
+		main{
+			background: #eee;
+			padding: 2%;
+			min-height: 500px;
+		}
+		footer{
+			background: orange;
+			height: 50px;
+			padding: 2%;
+		}
+		/* freie Klassen ------------------ */
+	</style>
+</head>
+<body>
+	<div id="all">
+		<header id="topheader">header</header>
+		<nav id="topnav">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Mehlmützen</a></li>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Kontakt</a></li>
+			</ul>
+		</nav>
+		<main>
+			<article>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi consequatur dolore eveniet voluptatum ipsum at natus est doloremque dignissimos iusto, animi maiores adipisci perferendis ipsam. Ipsa quod dicta delectus, dolorum.</p>
+			</article>
+		</main>
+		<footer>footer</footer>
+	</div>
+</body>
+</html>
