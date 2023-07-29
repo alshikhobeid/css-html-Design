@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<title>at-font-face</title>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+
+
+<style>
+/* roboto-regular - latin */
+	@font-face {
+	font-family: 'Roboto400';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+	url('fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('fonts/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+
+/* roboto-700 - latin teacher-version */
+	@font-face {
+	font-family: HansRoboto700;
+	src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'),
+	url('fonts/roboto-v30-latin-700.woff') format('woff');
+	}
+
+	* { 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	}
+	h3 {
+	}
+	html {
+	font: 1rem Roboto400, sans-serif;
+	}
+
+	h1 {
+	font-family: 'Pacifico', cursive;
+	}
+	h2 {
+	font: 700 2rem HansRoboto700, sans-serif;
+	}
+
+
+ul {
+padding-left: 30px;
+}
+</style>
+</head>
+	<body>
+		<h1>at-font-face</h1>
+		<h2>Überschrift mit Roboto</h2>
+
+		<h2>Schritt für Schritt - Anleitung</h2>
+		<ul>
+			<li>Schrift auswählen über https://fonts.google.com/</li>
+			<li>zu https://google-webfonts-helper.herokuapp.com wechseln</li>
+			<li>ausgewälte Schrift aufgerufen und den Anweisungen folgen</li>
+			<li> - im css-Code [Moderne Browser] auswählen und den Pfad anpassen</li>
+			<li> - Dateien downloden und in das Projekt entpacken</li>
+			<li>im Code font-family optimieren</li>
+			<li>Zuweisung der Schrift an Selekor</li>
+		</ul>
+
+		<h3>Überschrift per Adobe</h3>
+	</body>
+</html>
