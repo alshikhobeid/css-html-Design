@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<title>css-Formulare</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		form label{
+			width: 100px;
+			display: inline-block;
+			text-align: right;
+		}
+		form input, form textarea{
+			width: 200px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>css-Formulare</h1>
+	<form action="script.php" method="post">
+		<p><label>Name</label> <input type="text" name="Name"></p>
+		<p><label>E-Mail</label> <input type="email" name="eMail"></p>
+		<p><label>Telefon</label> <input type="tel" name="Telefon"></p>
+		<p><label>Anfrage</label> <textarea name="Anfrage" rows="5"></textarea></p>
+		<p><label>Antwort</label> bitte per E-Mail
+			<input type="radio" name="Antwort" value="per E-Mail"> / Telefon
+			<input type="radio" name="Antwort" value="per Telefon"></p>
+	</form>
+</body>
+</html>
