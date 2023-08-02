@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<title>position:absolute</title>
+	<meta charset="utf-8">
+	<style>
+		/*
+		- position:absolute (Positionierung innerhalb eines Elternelementes, Angabe Abstand von oben/unten, rechts/links)
+		- top,bottom,right,left (px/%/rem)
+		(Nehmen andere Inhaltselemente nicht wahr, legen sich darüber)
+
+		- position:static (Normalzustand)
+
+
+		overflow: (hidden => verstecken, auto => mit vertikalem Scrollbalken, sobald der Inhalt größer als Box, scroll => vertkaler und horiz. Scrollbalken - immer!)
+
+		z-index, vergleichbar der Ebenen im Photoshop, höchster Wert im Vordergrund, bedarf des Attributs position!
+		z-index:-1; stellte das positionierte Element in den Hintergund
+
+		*/
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		#abs1{
+			width: 200px;
+			height: 200px;
+			background: rgba(95,139,179,0.5);
+			
+			position: absolute;
+			left: 200px;
+			top: 100px;
+			overflow-y: auto; 
+		}
+		img[src*="wasserball."]{
+			position: absolute;
+			right: 200px;
+			top: 150px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>position:absolute</h1>
+	<p id="abs1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore tenetur porro minus, excepturi officiis voluptatem atque sint deleniti, vel nesciunt eos aspernatur corrupti, minima quo eum fuga unde repudiandae alias? Quo aliquid laboriosam ea necessitatibus placeat vero harum, aperiam veniam aut quos qui possimus impedit nostrum reprehenderit totam in quia.</p>
+	<img src="img/wasserball.png" alt="Wasserball">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis voluptas modi asperiores sunt molestias rem aliquid, quas temporibus repellendus, accusantium cupiditate unde. Laboriosam eos, suscipit blanditiis facilis saepe dolorum, eius. A esse quisquam quibusdam aliquam sit, nulla consectetur rem porro vitae eos obcaecati veniam, labore suscipit error doloremque excepturi aut non reiciendis laudantium reprehenderit recusandae ullam eaque est. Facilis voluptate, voluptates non eum, quas rem incidunt possimus deserunt doloribus adipisci ex earum accusantium debitis eius ut libero officia deleniti velit quos animi saepe cupiditate dignissimos fugit consectetur! Magnam voluptatem dolore itaque dolor, beatae dolores error eius, possimus eum ut accusamus?</p>
+</body>
+</html>
