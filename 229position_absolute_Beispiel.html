@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<title>Position - Beispiel</title>
+	<meta charset="utf-8">
+	<style>
+		
+		/* 
+		- position:relative (ohne weitere Angaben, horizontal/vertikal, zur absoluten Positionierung innerhalb eines Elternelementes.
+		Mit Positionsangaben, zur Veränderung der Position von der im Seitenablauf vorhandenen Position. Nicht zu empfehlen.)
+		*/
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		.img_txt{
+			max-width: 400px;
+			position: relative;
+		}
+		.img_txt figcaption{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background: orange;
+			padding: 0.5rem 1rem;
+			font-size: 1.3rem;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Position - Beispiel</h1>
+	<figure class="img_txt">
+		<img src="img/n11.jpg" alt="Osterbaum">
+		<figcaption>
+			<p>Osterbaum 2023</p>
+		</figcaption>
+	</figure>
+</body>
+</html>
