@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<title>Farbverlauf</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		.flex{
+			display: flex;
+			justify-content: space-around;
+		}
+		.flex div{
+			width: 100px;
+			height: 80px;
+			border: 1px solid;
+		}
+		#eins{
+			background: linear-gradient(red,yellow);
+			/* von oben nach unten */
+		}		
+		#zwei{
+			background: linear-gradient(to top,red,yellow);
+			/* nach rechts/links/oben/unten */
+		}		
+		#drei{
+			background: linear-gradient(30deg,red,yellow);
+			/* definierter Winkel */
+		}		
+		#vier{
+			background: linear-gradient(red,yellow,blue,green);
+			/* viele Farben */
+		}		
+		#fuenf{
+			background: linear-gradient(#aaa 0%,#fff 10%,#fff 90%,#aaa 100%);
+			/* gewichteter Verlauf */
+		}		
+		#sechs{
+			background: linear-gradient(#000 33%,#0f0 33%, #0f0 66%, #ff0 66%);
+			/* harter Übergang */
+		}		
+		#sieben{
+			background: radial-gradient(red, yellow);
+			/* innen nach außen */
+		}		
+		#acht{
+			background: radial-gradient(red 30%, yellow);
+			/* Gewichtung */
+		}		
+		#neun{
+			background: radial-gradient(30% 50%, red, yellow);
+			/* Gewichtung */
+		}		
+		#zehn {
+			background: linear-gradient(45deg, rgba(30,87,153,1) 0%,rgba(255,48,48,0.68) 34%,rgba(249,255,137,0.62) 40%,rgba(195,225,178,0.5) 53%,rgba(125,185,232,0.68) 70%,rgba(125,185,232,1) 100%);
+			/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+		
+		/* https://www.colorzilla.com/gradient-editor/ */
+
+	</style>
+</head>
+<body>
+	<h1>Farbverlauf</h1>
+	<div class="flex"> 
+		<div id="eins"></div>
+		<div id="zwei"></div>
+		<div id="drei"></div>
+		<div id="vier"></div>
+		<div id="fuenf"></div>
+		<div id="sechs"></div>
+		<div id="sieben"></div>
+		<div id="acht"></div>
+		<div id="neun"></div>
+		<div id="zehn"></div>
+	</div>
+</body>
+</html>
