@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+	<title>Hover-Rahmen</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+			color: #000;
+		}
+		.rahmengruppe{
+			display: flex;
+			gap: 1rem;
+		}
+		
+		/* hover-rahmen --------------- */
+		
+		.rahmen{
+			width: 400px;
+			height: 280px;
+			border: 5px solid orange;
+			position: relative;
+			overflow: hidden;
+		}
+		/* .hoverimg -------- */
+		.rahmen .hoverimg{
+			position: absolute;
+			left: 0;
+			top: 0;
+		/*	display: none;  */
+			opacity: 0;
+			transition: 0.5s;
+		}
+		.rahmen:hover .hoverimg{
+		/*	display: block;		*/
+			opacity: 1;
+		}
+		/* .rahmen h3 ------- */
+		.rahmen h3{
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			top: 200px;
+			background: rgba(255,255,255,0.7);
+			padding: 0.5rem 1rem;
+			transition: 0.5s;
+		}
+		.rahmen:hover h3{
+			top: 20px;
+		}
+		
+		/* .rahmen p --------- */
+		.rahmen p{
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -14px;
+			background: rgba(255,255,255,0.7);
+			padding: 0.5rem 1rem;
+			opacity: 0;
+			transition: 0.5s;
+		}
+		.rahmen:hover p{
+			bottom: 20px;
+			opacity: 1;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Firma xyz</h1>
+	<h2>Meine Leistungen</h2>
+	<div >
+		<figure class="rahmen">
+			<img class="defaultimg" src="img/gb06.jpg" alt="Fisch">
+			<img class="hoverimg" src="img/gb12.jpg" alt="Nepton">
+			<figcaption>
+				<h3>Webdesign</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, quo. <br><a href="#">- more -</a></p>
+			</figcaption>
+		</figure>
+
+		<figure class="rahmen">
+			<img class="defaultimg" src="img/gb34.jpg" alt="Fisch">
+			<img class="hoverimg" src="img/gb35.jpg" alt="Nepton">
+			<figcaption>
+				<h3>Printdesign</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, quo. <br><a href="#">- more -</a></p>
+			</figcaption>
+		</figure>
+
+		<figure class="rahmen">
+			<img class="defaultimg" src="img/gb06.jpg" alt="Fisch">
+			<img class="hoverimg" src="img/gb12.jpg" alt="Nepton">
+			<figcaption>
+				<h3>Webdesign</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, quo. <br><a href="#">- more -</a></p>
+			</figcaption>
+		</figure>
+	</div>
+</body>
+</html>
