@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="de">
+<head>
+<title>Name</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<style>
+/*
+https://tympanus.net/Development/HoverEffectIdeas/index.html	
+*/
+
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* padding,border nach innen darstellen */
+    }
+    html,body {
+	    font:1rem Helvetica, Arial, sans-serif;
+    }
+    .rahmen {
+        width: 400px;
+        height: 280px;
+        border: 10px solid #ddd;
+        position: relative;
+        overflow: hidden;
+        float: left;
+        margin: 5px;
+    }
+    .rahmen img {
+        width: 100%;
+    }
+    
+    /* innerer Rahmen ----------------------*/
+    /* (rechts-links) ---------------------*/
+    .rahmen:before {
+        content:"";                    /*leerer Inhalt*/
+        display: block;                /*als Block*/
+        border-right: 2px solid orange;/*bekommt border rechts*/
+        border-left: 2px solid orange;/*und links*/
+        position: absolute;            /*wird absolut im Rahmen positioniert*/
+        top: 10px;
+        right: 20px;
+        bottom: 10px;
+        left:20px;
+        z-index: 1;                    /*wird in den Vordergrund gebracht*/
+        transform: scaleY(0);          /*wird in y-Achse auf 0 geschrumpft*/
+        opacity: 0;                    /*bekommt die Deckkraft 0*/
+        transition: 0.5s;
+      /*  background: rgba(0,0,0,0.3);*/
+    }
+    .rahmen:hover:before {
+        transform: scaleY(1);          /*bekommt volle Höhe*/
+        opacity: 1;                    /*wird sichtbar*/
+    }
+    /* (oben-unten) ---------------------*/
+    .rahmen:after {
+        content:"";
+        display: block;
+        border-top: 2px solid orange;
+        border-bottom: 2px solid orange;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        bottom: 20px;
+        left:10px;
+        transform: scaleX(0);
+        z-index: 1;
+        opacity: 0;
+        transition: 0.5s;
+     /*   background: rgba(0,0,0,0.3);*/
+    }
+    .rahmen:hover:after {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    
+    /* hoverbild ------------ */
+    .rahmen .hoverimg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transform: scale(1.5) translateY(50px);
+        transition: 0.5s;
+    }
+    .rahmen:hover .hoverimg {
+        opacity: 1;
+        transform: scale(1) translateY(0);    
+    }
+    
+    /* h3 --------------------*/
+    .rahmen h3 {
+        position: absolute;
+        top: 220px;
+        left: 20px;
+        right: 20px;
+        background: rgba(255,255,255,.5);
+        padding: 5px 30px;
+        transition: 0.5s;
+    }
+    .rahmen:hover h3 {
+        top:20px;
+    }
+    
+    /* p --------------------*/
+    .rahmen p {
+        position: absolute;
+        bottom: 20px;
+        left:20px;
+        right: 20px;
+        background: rgba(255,255,255,.5);
+        padding: 5px 30px;
+        opacity: 0;
+        transform: scale(0.95);
+        transition: 1s;
+    }
+    .rahmen:hover p {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    /* freie Klassen -----------------------*/
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+</style>
+</head>
+<body>
+    <h2>Leistungen</h2>
+    <div class="clearfix">
+        <figure class="rahmen">
+            <img class="defaultimg" src="img/h19.jpg" alt="Hundekorb">
+            <img class="hoverimg" src="img/h15.jpg" alt="Bin müde">
+            <figcaption>
+                <h3>Webdesign</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid unde accusantium eaque ex, optio sunt nisi error delectus voluptatem deleniti. <a href="#">more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="rahmen">
+            <img class="defaultimg" src="img/b2.jpg" alt="Hundekorb">
+            <img class="hoverimg" src="img/b9.jpg" alt="Bin müde">
+            <figcaption>
+                <h3>Printdesign</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid unde accusantium eaque ex, optio sunt nisi error delectus voluptatem deleniti. <a href="#">more</a></p>
+            </figcaption>
+        </figure>
+    </div>
+</body>
+</html>
