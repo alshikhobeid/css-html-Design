@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<title>Variable Spalten</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Roboto400;
+			src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			url('fonts/roboto-v30-latin-regular.woff') format('woff');
+			}
+
+		@font-face {
+			font-family: Roboto700;
+			src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'), 
+			url('fonts/roboto-v30-latin-700.woff') format('woff'); 
+			}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		/* super-spalterei */
+		.spalten{
+			display: flex;
+		}
+		.spalten > * {
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+		.gap1{
+			gap: 1rem;
+		}
+		.wrapper900{
+			max-width: 900px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Variable Spalten</h1>
+	<div class="spalten gap1 wrapper900">
+		<figure>
+			<img src="img/p10.jpg" alt="puppi">
+			<figcaption>Anna</figcaption>
+		</figure>
+		<figure>
+			<img src="img/p11.jpg" alt="puppi">
+			<figcaption>Anna</figcaption>
+		</figure>		
+		<figure>
+			<img src="img/p2.jpg" alt="puppi">
+			<figcaption>Die CSS erzeugt eine beliebige Anzahl gleichgroßer Spalten</figcaption>
+		</figure>
+		<figure>
+			<img src="img/p13.jpg" alt="puppi">
+			<figcaption>Anna</figcaption>
+		</figure>
+	</div>
+</body>
+</html>
