@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+	<title>column-Bildergalerie-hover</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-regular.woff') format('woff');
+		}
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		.galerie {
+			column-count: 4;
+			column-width: 280px;
+			column-gap: 0;
+		}
+		.galerie img {
+			padding: 1px;
+		}
+		.galerie figure {
+			position: relative;
+		}
+		.galerie figure p {
+			position: absolute;
+			bottom: 20px;
+			left: 0;
+			right: 0;
+			background: rgba(255,255,255,0.5);
+			padding: 0.5rem 1rem;
+			opacity: 0;
+			transition: 0.3s;
+		}
+		.galerie figure:hover p {
+			opacity: 1;
+			bottom: 25px;
+		}
+		
+		.wrapper1200 {
+			max-width: 1200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>column-Bildergalerie</h1>
+	<div class="galerie wrapper1200">
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="img/gb01.jpg" alt="London">
+			<figcaption>
+				<p>London</p>
+			</figcaption>
+		</figure>
+	</div>
+</body>
+</html>
