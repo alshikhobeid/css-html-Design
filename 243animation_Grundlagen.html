@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>animation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		/* roboto-regular - latin */
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v29-latin-regular.woff2') format('woff2'), 
+			   url('fonts/roboto-v29-latin-regular.woff') format('woff'); 
+		}
+
+		/* roboto-700 - latin */
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v29-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v29-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* typselektoren --------------------------*/
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1, h2, h3 {
+			font-family: Roboto700, sans-serif;
+		}
+		h1 {
+			font-size: 5rem;
+			text-align: center;
+			opacity: 0;
+			animation-name: textAni;
+			animation-duration: 2s;
+			animation-fill-mode: forwards; /**/
+			animation-delay: 1s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: 3; /* infinite*/
+			animation-direction: alternate;
+			/*normal(von 0% - 100%; standard); reverse (von 100% - 0%);alternate (0%-100%-0%);alternate-reverse(100%-0%-100%)*/
+		}
+		@keyframes textAni {
+			from { transform: translateX(-100vw) scale(0.5); color: #000; opacity: 0; }
+			to   { transform: translateX(0vw) scale(1); color: orange; opacity: 1;}
+		}
+		@keyframes textAni {
+			0%   { transform: translateX(-100vw) scale(0.5); color: #000; opacity: 0; }
+			100% { transform: translateX(0vw) scale(1); color: orange; opacity: 1;}
+		}
+
+	</style>
+</head>
+<body>
+	<h1>animation</h1>
+</body>
+</html>
