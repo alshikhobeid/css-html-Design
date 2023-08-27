@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<title>meine erste Website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style>
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body {
+	font: 1em Segoe, Verdana, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+header {
+	position:relative;
+	max-width: 900px;
+	margin: auto;
+	background-color: lemonchiffon;
+	height: 512px;
+	overflow: hidden;
+}
+/* Rauch bewegt sich über Loko */
+header img[alt="rauch"] {
+	animation-name: rauch;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+@keyframes rauch {
+	from {
+		transform: translate(50px, 0px) scale(1);opacity: 1;
+	}
+	to {
+		transform: translate(-30px, 0px) scale(1.5);opacity: 0;
+	}
+}
+	
+/* Loko und Rauch bewegen ------------------------- */	
+header .lokodrive {
+	animation-name: bewegung;
+	animation-duration: 8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	position: relative;
+	z-index: 2
+}
+ @keyframes bewegung {
+	from {
+		transform: translate(-220px, 350px);
+	}
+	 to {
+		transform: translate(calc(100% - 220px), 350px);
+	}
+}
+
+/* Hintergrundbild bewegen (2 Fotos)------------------------ */	
+.BGdrive {
+}
+	
+img[alt="Backgr1"] {
+	position: absolute;
+	top: 0px;
+	height: 512px;
+	animation-name: background1;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+img[alt="Backgr2"] {
+	position: absolute;
+	top: 0px;
+	height: 512px;
+	animation-name: background2;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+@keyframes background1 {
+	from {
+		transform: translateX(0px)
+	}
+	to {
+		transform: translateX(-100%)
+	}
+}
+@keyframes background2 {
+	from {
+		transform: translateX(+100%)
+	}
+	to {
+		transform: translateX(0px)
+	}
+}
+</style>
+</head>
+<body>
+<header>
+	<div class="lokodrive"> 
+		<img src="img/qualm.png" alt="rauch"><br>
+		<img src="img/loko.png" alt="Lok"> 
+	</div>
+	<div class="BGdrive">
+		<img src="img/anibg.png" alt="Backgr1"><img src="img/anibg.png" alt="Backgr2">
+	</div>
+</header>
+</body>
+</html>
