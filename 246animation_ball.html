@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>animation Ball</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* typselektoren --------------------------*/
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1, h2, h3 {
+			font-family: Roboto700, sans-serif;
+		}
+		/* Inhalt von oben ------------------------*/
+		img[src*="wasserball."]{
+			animation-name: ball;
+			animation-duration: 10s;
+		}
+		@keyframes ball {
+			0%  { transform: translateX(0px) rotate(0); }
+			10% { transform: translateX(0px) rotate(720deg); }
+			50% { transform: translateX(900px) rotate(1400deg); }
+			60% { transform: translateX(900px) rotate(1400deg); }
+			100%{ transform: translateX(0px) rotate(720deg); }
+		}
+		/* freie Klassen --------------------------*/
+	</style>
+</head>
+<body>
+	<img src="img/wasserball.png" alt="Wasserball">
+	
+	
+</body>
+</html>
