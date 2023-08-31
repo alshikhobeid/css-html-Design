@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>Name</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* typselektoren --------------------------*/
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1, h2, h3 {
+			font-family: Roboto700, sans-serif;
+		}
+		/* Inhalt von oben ------------------------*/
+		#henker {
+			width: 294px;
+			height: 480px;
+			background: url("img/animation.jpg");
+			animation-name: henker;
+			animation-duration: 1s;
+			animation-timing-function: steps(8);
+			animation-iteration-count: infinite;
+		}
+		@keyframes henker {
+			0%  { background-position: left top; }
+			100%{ background-position: right top; }
+		}
+		/* freie Klassen --------------------------*/
+	</style>
+</head>
+<body>
+	<figure id="henker"></figure>
+	
+	
+</body>
+</html>
