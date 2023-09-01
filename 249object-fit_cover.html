@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>object-fit</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		/* roboto-regular - latin */
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v29-latin-regular.woff2') format('woff2'), 
+			   url('fonts/roboto-v29-latin-regular.woff') format('woff'); 
+		}
+
+		/* roboto-700 - latin */
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v29-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v29-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* typselektoren --------------------------*/
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1, h2, h3 {
+			font-family: Roboto700, sans-serif;
+		}
+
+		@media screen and (min-width:700px){
+			.zweispalter50_50 {
+				display: flex;
+			}
+			.zweispalter50_50 > * {
+				flex-basis: 50%;
+			}
+		}
+		.cover {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.pad2 { padding: 2%; }
+		
+		@media (max-width:700px){
+			.mobile_reverse {
+				display: flex;
+				flex-direction: column-reverse;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>object-fit</h1>
+	<main>
+		<article class="zweispalter50_50 mobile_reverse">
+			<div class="pad2">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolorum doloremque unde, nobis ipsa mollitia placeat aut fugit ipsum voluptatem soluta neque numquam sint id laudantium doloribus dicta non officia architecto laborum dolor culpa. Itaque, vitae, ipsa. Sapiente odit vel dolorum illum. Quas, odio, temporibus. Sapiente, atque iusto architecto. Tenetur velit ex hic sequi. Doloremque reiciendis, perferendis soluta vel laudantium voluptatem sint officia veniam in voluptatibus maxime vero minima, minus asperiores culpa pariatur dolor exercitationem a nam autem modi velit numquam ea sunt quis. Impedit aspernatur fuga, nobis quam eius voluptate architecto. Sapiente rerum quaerat quod perferendis ut doloribus vel quisquam itaque, hic, nisi distinctio maiores voluptas nam deleniti reiciendis ipsam pariatur officiis id corporis earum, beatae neque numquam! Provident omnis inventore quae, reiciendis odio blanditiis. Eveniet totam esse, dolorem ea deleniti cupiditate, iusto quasi accusamus asperiores, consequuntur enim possimus ab cum soluta reprehenderit voluptates voluptate tempore doloribus debitis. Deleniti.</p>
+			</div>
+			<figure>
+				<img class="cover" src="img/b11.jpg" alt="Blume">
+			</figure>
+		</article>
+		<article class="zweispalter50_50">
+			<figure>
+				<img class="cover" src="img/b11.jpg" alt="Blume">
+			</figure>
+			<div class="pad2">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolorum doloremque unde, nobis ipsa mollitia placeat aut fugit ipsum voluptatem soluta neque numquam sint id laudantium doloribus dicta non officia architecto laborum dolor culpa. Itaque, vitae, ipsa. Sapiente odit vel dolorum illum. Quas, odio, temporibus. Sapiente, atque iusto architecto. Tenetur velit ex hic sequi. </p>
+			</div>
+		</article>
+	</main>
+</body>
+</html>
