@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>grid-Grundlagen</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+    /* 
+  
+    Rasterlayout mit display:grid
+    Empfehlung UD grid für Aussenraster, flex für Innenraumgestaltung
+    
+    # Im Netz: --------------------------------------------------------
+    https://blog.kulturbanause.de/2013/12/css-grid-layout-module/ 
+    
+    # und wieder der Nerv mit ie: -------------------------------------
+    https://maurice-web.de/css-grids-raster-im-ie10-und-in-neuer-syntax-definieren/
+    https://www.mediaevent.de/css/grid-example.html
+    
+    # Videos von Unleashed Design: ------------------------------------
+    # CSS Grid Einfach erklärt! Die Zukunft des CSS Layouts. [TUTORIAL]
+    https://www.youtube.com/watch?v=Xj_sIK6-A_Q
+    
+    # CSS3 Grid/Flex Layout richtig nutzen! [TUTORIAL]
+    https://www.youtube.com/watch?v=sB-ooIXFTjg  
+
+    
+    # Grid-Element beschreiben ############################
+    # Grid-Container: -------------------------------------
+    .grid {
+        display: grid;
+        grid-template-rows: 150px auto auto 100px;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+
+        grid-template-rows: 100px auto auto auto 100px;
+        grid-template-columns: repeat(10, 10%);         10Spalten zu 10%
+ 
+        grid-template-rows: 100px auto auto auto 100px;
+        grid-template-columns: repeat(5, 1fr);          5Spalten zu je 1/5 der Ges.Breite
+ 
+        grid-row-gap:15px;                              Abstände zwischen Spalten Zeilen
+        grid-column-gap:15px;
+
+    } 
+    
+    
+    neben px rem % gibt es fr
+    1fr ist ein Bruchteil (engl. fraction) des verfügbaren Platzes.   
+    Bsp.: grid-template-columns: 1fr 2fr 1fr; (=>  1/4 2/4 1/4)
+  
+    # Grid-Items: ----------------------------------------------
+    .header {
+        grid-column-start:1;
+        grid-column-end:11;
+        grid-row-start:1;
+        grid-row-end:2;
+
+        grid-column:1 / 11;
+        grid-row:1 / 2;
+
+        grid-area: 1 / 1 / 2 / 11; (rowstart/columnstart/rowend/columnend)
+
+    }
+    
+    # Das HighLight grid-template-areas: ###########################
+    # Verteilung der Areas im Container ----------------------------
+    .grid { 
+        display: grid; 
+        grid-template-rows:100px auto 50px ; 
+        grid-template-columns: repeat(4, 1fr); 
+
+        grid-template-areas: 
+        "  .     header  header  .    "              . => lässt eine Spalte frei
+        "leftnav content content sitebar"
+        "fuss    fuss    fuss    fuss"
+    } 
+    
+    # Verbindung zwischen Areas und Items --------------------------------
+    header { grid-area: header; } 
+    #left  { grid-area: leftnav; } 
+    main   { grid-area: content; } 
+    #right { grid-area: sitebar; } 
+    footer { grid-area: fuss; }    
+    
+
+	# Ausrichtung im container: ----------------------------------- 
+    # oder besser per flex organisieren ---------------------------
+	justify-content:flex-start,center,flex-end;
+    align-items: center;        vertikal
+	
+	# Ausrichtung im item: ----------------------------------------
+	align-self: start,center,end,stretch;
+	
+	# minmax() - Funktion -----------------------------------------
+	minmax(min-content,300px)    
+	
+	# grid-container/items sind in direkter Eltern-Kind-Beziehung (wie bei flex)
+	
+	
+	https://codingfantasy.com/games
+	zum üben
+	
+	und weiter:
+	justify-content:start,end,center,space-around, space-between
+	align-content:start,end,center,space-around, space-between
+	https://www.youtube.com/watch?v=B7aZ85xdF9I
+    */    
+		/* roboto-regular - latin */
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v29-latin-regular.woff2') format('woff2'), 
+			   url('fonts/roboto-v29-latin-regular.woff') format('woff'); 
+		}
+
+		/* roboto-700 - latin */
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v29-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v29-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* typselektoren --------------------------*/
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1, h2, h3 {
+			font-family: Roboto700, sans-serif;
+		}
+		
+		/* Inhalt von oben ------------------------*/
+		/* grid-container ---*/
+		@media (max-width: 600px){
+			nav {
+				position: fixed;
+				right: 0;
+				top: 0;
+				z-index: 100;
+			}
+		}
+		
+		/* tablet -------------------------*/
+		@media (min-width:600px) and (max-width:1200px){
+			#grid-container {
+				display: grid;
+				grid-template-rows: 150px auto auto 50px;
+				grid-template-columns: 3fr 1fr;
+
+				grid-template-areas: 
+					"kopf kopf"
+					"navi navi"
+					"main side"
+					"fuss fuss";
+			}
+		}
+		
+		/* desktop -------------------------*/
+		@media (min-width:1201px) {
+			#grid-container {
+				display: grid;
+				grid-template-rows: 150px auto 50px;
+				grid-template-columns: 25% 50% 25%;
+
+				grid-template-areas: 
+					"  .  kopf  .  "
+					"navi main side"
+					"fuss fuss fuss";
+			}
+		}
+
+		/* Zuordnung der areas ----*/
+		header { grid-area: kopf; }
+		#links { grid-area: navi; }
+		main   { grid-area: main; }
+		#rechts{ grid-area: side; }
+		footer { grid-area: fuss; }
+		
+		
+		/* freie Klassen --------------------------*/
+		/*farben*/
+		.red {background:tomato;}
+		.green {background:#7BAD7F;}
+		.orange {background: orange;}
+		.gold {background: gold;}
+		.hellgreen {background:#D9FF9A;}
+		.blue {background:#9BC0E3;}
+		.hellblue {background: #9BD9E3;}
+
+	</style>
+</head>
+<body>
+	<div id="grid-container">
+		<header class="red"><h1>grid-Grundlagen</h1></header>
+		<nav class="gold" id="links">Navi</nav>
+		<aside id="rechts" class="green">Rechts</aside>
+		<main class="blue">
+			<article>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis inventore reprehenderit ipsa pariatur deserunt odit recusandae nisi quos iste, distinctio unde impedit beatae quia quaerat perferendis harum, sapiente, molestiae consequatur at voluptatum sunt dolorem ipsam assumenda. Distinctio delectus, vero a asperiores molestiae quaerat repudiandae ullam voluptatem! Dolor, nulla! Autem, voluptatum.</p>
+			</article>
+		</main>
+		<footer class="hellblue">footer</footer>
+	</div>
+	
+</body>
+</html>
