@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Responsives Webdesign</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Ext. css aufgeteilt für einzelne Größenbereiche -->
+<!--	
+<link href="desktop.css" rel="stylesheet" media="screen and (min-width:851px)">
+<link href="mobile.css" rel="stylesheet" media="screen and (max-width:850px)">
+-->
+
+
+<!--
+@font-face{}
+* {}
+img {}
+
+/* mobile ------------------------------------*/	
+@media screen and (max-width:600px){
+...
+}
+
+/* tablet ------------------------------------*/	
+@media screen and (min-width:601px) and (max-width:900px){
+...
+}
+		
+/* desktop ------------------------------------*/	
+@media screen and (min-width:901px){
+...
+}
+
+//////////////////////////////////////////////////////////////////
+Die Schritte dahin:
+- index.html in desktop-Ansicht fertig (html und css)!
+- break-point festlegen
+- desktop-css-Daten mit @media für desktop umschließen
+- den desktop-css-block kopieren -> @media für mobile anpassen
+- den mobile-Block befehlsweise durchgehen und evtl. anpassen
+//////////////////////////////////////////////////////////////////
+
+
+/*=================================================*/
+/*===Fortgeschrittene==============================*/
+/*=================================================*/
+/* mobile -------------------*/
+
+/* desktop ------------------------------------*/	
+@media screen and (min-width:901px){
+...
+}
+
+
+
+/*=================================================*/
+
+
+
+
+/*mobile-css ohne @media*/
+* {}
+img {}
+
+
+/* tablet ------------------------------------*/	
+@media screen and (min-width:600px) {
+...
+}
+		
+/* desktop ------------------------------------*/	
+@media screen and (min-width:1200px){
+...
+}
+
+
+/* ===========================================*/
+/* calc --------------------------------------*/
+Relative und Absolute Werte verrechnen.
+
+width = calc(50% + 2px);
+
+Vor und hinter dem math. Operator ein Leerzeichen! 
+
+
+-->
+	
+	
+
+	
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	/* mobile ---------------------------------------------*/
+	@media screen and (max-width:650px) {
+		html {
+			font: 1rem Arial, sans-serif;
+		}
+		/* von oben nach unten ---------------*/
+		header, article, footer {
+			padding: 2%;
+		}
+		header {
+			padding: 5% 2%;
+		}
+		/* navi-------------------------------*/	
+		nav {
+			border-right: 1px solid #fff;
+			border-left: 1px solid #fff;
+		}
+		nav ul {
+			list-style-type: none;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		nav ul li {
+			flex-basis: 50%;
+		}
+		nav ul li a {
+			color: #333;
+			text-decoration: none;
+			background: #ddd;
+			line-height: 48px;
+			text-align: center;
+			display: block;
+			border: 1px solid #fff;
+		}
+		nav ul li a:hover {
+			color: #900;
+			background: #ccc;
+		}
+		/* footer ---------------------------*/	
+		footer {
+			border-top: 1px solid #ddd;
+		}
+		/* freie Klassen --------------------*/	
+		.fltleft {
+			float: left;
+			margin: 2%;
+		}
+		.clearfix::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.zweispalter {
+			padding: 2% 0;
+		}
+		.zweispalter > div {
+			margin: 2% 0;
+		}
+	}
+	/* desktop --------------------------------------------*/
+	@media screen and (min-width:650px) {
+		html {
+			background: #ddd;
+			font: 1rem Arial, sans-serif;
+		}
+		/* von oben nach unten ---------------*/
+		#all {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+		header, article, footer {
+			background: #fff;
+			padding: 2%;
+		}
+		header {
+			height: 150px;
+		}
+		/* navi-------------------------------*/	
+		nav {
+			border-right: 1px solid #fff;
+			border-left: 1px solid #fff;
+		}
+		nav ul {
+			list-style-type: none;
+			display: flex;
+		}
+		nav ul li {
+			flex-basis: calc(100% / 6);
+		}
+		nav ul li a {
+			color: #333;
+			text-decoration: none;
+			background: #ddd;
+			line-height: 30px;
+			text-align: center;
+			display: block
+		}
+		nav ul li a:hover {
+			color: #900;
+			background: #ccc;
+		}
+		/* footer ---------------------------*/	
+		footer {
+			border-top: 1px solid #ddd;
+		}
+		/* freie Klassen --------------------*/	
+		.fltleft {
+			float: left;
+			margin: 2%;
+		}
+		.clearfix::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.zweispalter {
+			padding: 2% 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		.zweispalter > div {
+			flex-basis: 49%;
+		}
+	}
+</style>
+</head>
+<body>
+<div id="all">
+	<header>
+		<h1>Firma xyz</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Über uns</a></li>
+			<li><a href="#">Leistungen</a></li>
+			<li><a href="#">asdfsafd</a></li>
+			<li><a href="#">Kontakt</a></li>
+			<li><a href="#">Impressum</a></li>
+		</ul>
+	</nav>
+	<main>
+		<article>
+			<h2>Willkommen</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, incidunt? Excepturi, laudantium, soluta suscipit quasi aliquam earum commodi ducimus nobis voluptatum possimus ipsum itaque asperiores. Ratione necessitatibus distinctio sint quae iusto, nam doloremque fugiat, maxime voluptatum, enim non laudantium eius cupiditate a, autem culpa odit accusantium atque veniam vero sed alias. Molestiae dolore voluptatem, harum beatae temporibus commodi at provident itaque impedit iure iusto neque quidem maiores consequuntur nemo quo id quae, mollitia et reprehenderit eum praesentium minus! Quia debitis, itaque amet consequuntur ea autem magni, rerum inventore ducimus! Consequatur inventore praesentium maxime tempore mollitia culpa voluptatibus quam alias laborum.</p>
+			<div class="zweispalter">
+				<div class="clearfix">
+					<p><img class="fltleft" src="img/wasserball.png" alt="Chara">Die Bilder links und rechts haben den CSS-Stil visibility: hidden, das mittlere Bild display: none. Wenn das mittlere Bild verborgen wird, muss sein Raum kollabieren und das rechte Bild muss auf Platz 2 rutschen.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere est eligendi pariatur sequi itaque mollitia voluptates fugit, quaerat soluta amet. Cum, iusto, numquam! Laboriosam omnis soluta rerum nulla, aut nostrum facere in repellat corporis fugiat sint id recusandae. In, cumque magnam quod sapiente nostrum, animi vero. Ad quibusdam nisi nostrum!</p>
+				</div>
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad eum, accusantium ea aspernatur temporibus debitis nihil, ipsa doloremque eveniet ipsum pariatur, vero dolorem laboriosam iure a vitae libero reiciendis est modi. Quos tempore quo, aperiam veritatis eius accusantium dolores sint blanditiis enim molestias, modi sunt quasi fugiat eos aliquid veniam ducimus, expedita dolorem. Earum maiores, ad nam ut fuga consequuntur modi asperiores ea saepe praesentium numquam esse ducimus sapiente sequi magnam ipsam doloribus atque fugit, molestiae blanditiis necessitatibus aut. Molestiae harum obcaecati repellat rem eligendi architecto porro vitae quos. Repudiandae voluptatem itaque, voluptatibus modi minima praesentium. Amet, quos, iste.</p>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, a, illo. Sunt placeat esse perferendis, doloremque voluptatum debitis ad reprehenderit magni, mollitia tenetur est, blanditiis fugiat consequuntur voluptatem autem recusandae, et unde explicabo eligendi. Consectetur tempore maiores, eos obcaecati velit, reiciendis architecto necessitatibus voluptates quidem beatae saepe iure? Quisquam, est.</p>
+		</article>
+	</main>
+	<footer>Alle Rechte dem Teacher</footer>
+</div>
+</body>
+</html>
