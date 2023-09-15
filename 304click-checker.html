@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+	<title>click-checker</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+	/* 
+	Nachbarschaftsselektoren:
+	- nachfolgende Elemente des gleichen Elternelementes
+	- direkte Nachbar, + (Bsp.: #checker1:checked + #inh1 > div {})
+	- indirekter Nachbar, ~ (Bsp.: #checker1:checked ~ #inh1 > div {})
+	*/
+		
+		
+		
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-regular.woff') format('woff');
+		}
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 1rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		input[id*="checker"] {
+			display: none;
+		}
+		
+		#inhalt1 > div {
+			display: none;
+		}
+		#checker1:checked + #inhalt1 > div {
+			display: block;
+		}
+		
+		
+		/* mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
+		
+		#inhalt2 > div:last-of-type {
+			display: none;
+		}
+		#checker2:checked ~ #inhalt2 > div:last-of-type {
+			display: block;
+		}
+		label[for="checker2"]::after {
+			content: "- more -";
+		}
+		#checker2:checked ~ #inhalt2 label[for="checker2"]::after {
+			content: "- less -";
+		}
+	</style>
+</head>
+<body>
+	<h1>click-checker</h1>
+	<input type="checkbox" id="checker1">
+	<article id="inhalt1">
+		<h2><label for="checker1">Click-Überschrift</label></h2>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex odio, maiores nihil tempore, cumque necessitatibus magni quibusdam totam. Fugit unde minus molestiae in saepe vero quia reprehenderit molestias. Debitis, quia vero cumque. Aliquid ad distinctio voluptates, optio incidunt voluptatum eum, vitae quam ex quod officia molestiae rerum nesciunt dignissimos porro quae numquam dolorem pariatur, tempore, placeat aut. Reprehenderit ducimus magni dignissimos laudantium eius aspernatur, autem explicabo possimus deserunt id dolores voluptatibus quod dolore sit quos, beatae. Amet vero reprehenderit autem excepturi dolorem libero consequatur ex ullam sequi perferendis ut, suscipit harum minus praesentium tempore quaerat, molestiae vel voluptatibus modi obcaecati.</p>
+		</div>
+	</article>
+	
+	<hr><hr><hr>
+	
+	<input type="checkbox" id="checker2">
+	<article id="inhalt2">
+		<h2>Text mit -more- Schaltfläche</h2>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores neque aspernatur optio asperiores quas sapiente libero, nesciunt facere, aliquid ad fuga temporibus soluta autem, ea quam minima ipsam tempore mollitia dicta, culpa recusandae sed. A magnam velit eos id, reiciendis aut, deleniti, cupiditate unde aliquid nobis quo dolor exercitationem dicta.</p>
+			<p><label for="checker2"></label></p>
+		</div>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum aliquid cupiditate numquam optio molestiae rem labore mollitia neque unde iste. Id sed rerum labore, eaque porro incidunt omnis, voluptatibus quidem asperiores officiis laborum voluptatum quo soluta officia autem quibusdam. Ad maxime, nihil voluptates ducimus velit tenetur optio sapiente, animi soluta distinctio eius, et. Suscipit rerum, asperiores cum rem beatae, ut illo blanditiis inventore impedit? Quod distinctio qui eum dicta impedit amet beatae natus in cum vitae iusto harum ipsam atque aut at labore, rem sed assumenda? Cum nobis eum incidunt, facere inventore quas aut officiis ipsam. Vitae libero saepe, hic?</p>
+		</div>
+	</article>
+</body>
+</html>
