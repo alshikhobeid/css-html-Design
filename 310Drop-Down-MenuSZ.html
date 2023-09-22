@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<title>Drop-Down-Menu</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		/* roboto-regular - latin */
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v29-latin-regular.woff2') format('woff2'), 
+			   url('fonts/roboto-v29-latin-regular.woff') format('woff'); 
+		}
+
+		/* roboto-700 - latin */
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v29-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v29-latin-700.woff') format('woff');
+		}
+
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* typselektoren --------------------------*/
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		input[id*="checker"] { display: none; }
+		
+		/* mobile -------------------------------*/
+		@media screen and (max-width:600px) {
+			html {
+				font: 1rem Roboto400, sans-serif;
+			}
+			h1, h2, h3 {
+				font-family: Roboto700, sans-serif;
+			}
+			/* Inhalt von oben ------------------------*/
+			
+			#topnav {
+				padding-top: 4rem;
+				position: fixed;
+				top: 0;
+				bottom:0;
+				right: 0;
+				width: 200px;
+				transform: translateX(100%);
+				overflow-y: auto;
+				z-index: 100;
+				transition: 0.5s;
+			}
+			#navchecker:checked ~ #topnav {
+				transform: translateX(0);
+			}
+			#burger {
+				position: fixed;
+				top: 1.5rem;
+				right: 0;
+				width: 2.5rem;
+				line-height: 2.5rem;
+				background: orange;
+				text-align: center;
+				font-size: 1.5rem;
+				z-index: 101;
+			}
+			#burger label {
+				display: block;
+				transition: 0.5s;
+			}
+			#navchecker:checked ~ #burger label {
+				transform: rotate(45deg);
+			}
+			#topnav ul {
+				list-style: none;
+				background: orange;
+			}
+			#topnav a {
+				text-decoration: none;
+				color: #000;
+				padding: 0.5rem 1rem;
+				display: block;
+				border-bottom: 1px solid;
+			}			
+			#topnav ul ul a {
+				background: rgba(255,211,132,1.00);
+			}
+			#topnav ul ul a:before {
+				content: "- ";
+			}
+			#topnav ul ul a:hover {
+				background: rgba(255,225,173,0.95);
+			}
+			
+			/* freie Klassen --------------------------*/
+		}
+		/* desktop ------------------------------*/
+		@media screen and (min-width:601px) {
+			html {
+				font: 1rem Roboto400, sans-serif;
+			}
+			h1, h2, h3 {
+				font-family: Roboto700, sans-serif;
+			}
+			/* Inhalt von oben ------------------------*/
+			#topnav, main {
+				max-width: 900px;
+				margin: auto;
+			}
+			#burger { display: none; }
+			#topnav {
+				background: orange;
+			}
+			#topnav > ul {
+				list-style: none;
+				display: flex;
+			}
+			#topnav a {
+				text-decoration: none;
+				color: #000;
+				padding: 0.5rem 1rem;
+				display: block;
+			}
+			#topnav li {
+				position: relative;
+				width: 125px;
+			}
+			/* a 1. Ebene anders
+			#topnav > ul > li > a {
+				font-weight: bold;
+			}
+			*/
+			#topnav ul ul {
+				list-style: none;
+				position: absolute;
+				background: rgba(255,186,61,0.95);
+				min-width: 100%;
+				/*display: none;*/
+/*				z-index: -1;*/
+				visibility: hidden;
+				opacity: 0;
+				transform: translateY(20px);
+				transition: 0.3s;
+			}
+			#topnav li:hover ul {
+				/*display: block;*/
+				opacity: 1;
+				z-index: 100;
+				visibility: visible;
+				transform: translateY(0px);
+			}
+			#topnav ul ul a {
+				border-bottom: 1px solid;
+			}
+			#topnav ul ul a:hover {
+				background: rgba(255,210,130,0.95);
+			}
+
+			/* freie Klassen --------------------------*/
+		}
+	</style>
+</head>
+<body>
+	<input type="checkbox" id="navchecker">
+	<p id="burger"><label for="navchecker">+</label></p>
+	<nav id="topnav">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Backwaren</a>
+				<ul>
+					<li><a href="#">Brot</a></li>
+					<li><a href="#">Brötchen</a></li>
+					<li><a href="#">Torten</a></li>
+					<li><a href="#">Steusel</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Mehlmützen</a></li>
+			<li><a href="#">Laden</a>
+				<ul>
+					<li><a href="#">Jena</a></li>
+					<li><a href="#">Köln</a></li>
+					<li><a href="#">Berlin</a></li>
+					<li><a href="#">Regensburg</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Kontakt</a></li>
+		</ul>
+	</nav>
+	<main>
+		<article>
+			<h1>Drop-Down-Menu</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores tenetur quisquam aspernatur atque eum, magnam necessitatibus vitae veritatis repellat aliquid minima non, nulla illo quam aperiam voluptatem, placeat quibusdam. Ipsam nostrum exercitationem veritatis, unde asperiores necessitatibus facere accusamus placeat maxime deserunt vero ducimus eius fugit harum hic aut vel ullam.</p>
+		</article>
+	</main>
+</body>
+</html>
