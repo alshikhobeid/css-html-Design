@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<title>klick-target</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		@font-face {
+		  font-family: Roboto400;
+		  src: url('fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-regular.woff') format('woff');
+		}
+		@font-face {
+		  font-family: Roboto700;
+		  src: url('fonts/roboto-v30-latin-700.woff2') format('woff2'),
+			   url('fonts/roboto-v30-latin-700.woff') format('woff');
+		}
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+		html {
+			font: 3rem Roboto400, sans-serif;
+		}
+		h1,h2,h3,h4 {
+			font: 700 2rem Roboto700, sans-serif;
+		}
+		
+		#inh1 {
+			display: none;
+		}
+		#inh1:target {
+			display: block;
+		}
+/*
+Das Prinzip :target ---
+ist eine id als Ziel per internem Link gewählt, hat sie den Zustand :target
+und css-Eigenschaften können vermittelt werden.
+
+Eltern-Kind-Beziehungen spielen keine Rolle 
+*/	
+		
+	</style>
+</head>
+<body>
+	<h1><a href="#inh1">klick-target</a></h1>
+	<div id="inh1">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste perferendis vel fugit, consequatur iusto laborum modi quibusdam, dolor, a molestiae ratione aspernatur explicabo dignissimos error dolorem eaque sint cumque consequuntur ullam. Voluptatem sint laudantium aut rem! Quibusdam totam ipsa aliquam, ducimus facilis id provident maxime. Qui consectetur voluptatum rem iure incidunt maiores minus, dolorum dolore vel hic ea aliquid fugiat eligendi laudantium soluta ipsum accusantium quas modi tempore placeat delectus nesciunt obcaecati. Necessitatibus repudiandae accusamus laboriosam eos aliquid eius excepturi repellendus commodi a et. Fugiat sunt unde modi laudantium, tenetur similique blanditiis provident harum molestiae exercitationem dolorum, saepe incidunt quaerat!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste perferendis vel fugit, consequatur iusto laborum modi quibusdam, dolor, a molestiae ratione aspernatur explicabo dignissimos error dolorem eaque sint cumque consequuntur ullam. Voluptatem sint laudantium aut rem! Quibusdam totam ipsa aliquam, ducimus facilis id provident maxime. Qui consectetur voluptatum rem iure incidunt maiores minus, dolorum dolore vel hic ea aliquid fugiat eligendi laudantium soluta ipsum accusantium quas modi tempore placeat delectus nesciunt obcaecati. Necessitatibus repudiandae accusamus laboriosam eos aliquid eius excepturi repellendus commodi a et. Fugiat sunt unde modi laudantium, tenetur similique blanditiis provident harum molestiae exercitationem dolorum, saepe incidunt quaerat!</p>
+		<p><a href="#">- close -</a></p>
+	</div>
+</body>
+</html>
